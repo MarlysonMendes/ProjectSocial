@@ -1,0 +1,26 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "caeaf1cb-d949-442b-95c7-3393288a87f5": {
+      "ProjectGuid": "caeaf1cb-d949-442b-95c7-3393288a87f5",
+      "DisplayName": "CwkSocial.Api",
+      "ColorIndex": 0
+    },
+    "101eb92e-3d87-4d3c-95f7-c5d4c184cacc": {
+      "ProjectGuid": "101eb92e-3d87-4d3c-95f7-c5d4c184cacc",
+      "DisplayName": "CwkSocial.Domain",
+      "ColorIndex": 1
+    },
+    "8e9c7bdc-f676-4fea-9444-827c77662c66": {
+      "ProjectGuid": "8e9c7bdc-f676-4fea-9444-827c77662c66",
+      "DisplayName": "CwkSocial.Application",
+      "ColorIndex": 2
+    },
+    "3142db24-7d34-4433-acea-09834a854b6e": {
+      "ProjectGuid": "3142db24-7d34-4433-acea-09834a854b6e",
+      "DisplayName": "CwkSocial.Dal",
+      "ColorIndex": 3
+    }
+  },
+  "NextColorIndex": 4
+}
