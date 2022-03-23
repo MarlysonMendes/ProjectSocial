@@ -14,15 +14,15 @@ namespace CwkSocial.Domain.Aggregates.PostAggregate
         private readonly List<PostComment> _comments = new List<PostComment>();
         private readonly List<PostInteraction> _interactions = new List<PostInteraction>();
 
-        public Post()
+        private Post()
         {
         }
-        public Guid PostId { get; set; }
-        public Guid UserProfileId { get; set; }
-        public UserProfile UserProfile { get; set; }
-        public string TextContent { get; set; }
-        public DateTime CreatedDate { get; set; }
-        public DateTime LastModified { get; set; }
+        public Guid PostId { get; private set; }
+        public Guid UserProfileId { get; private set; }
+        public UserProfile UserProfile { get; private set; }
+        public string TextContent { get; set; private }
+        public DateTime CreatedDate { get; private set; }
+        public DateTime LastModified { get; private set; }
 
         // Recomendado usar Enumerable, pois List e Collection possui metodos para alterar diretamente os valores
 
