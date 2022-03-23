@@ -1,0 +1,12 @@
+C:\Users\marly\Desktop\Projetos .NET\ProjectSocial\CwkSocial.Application\bin\Debug\net6.0\CwkSocial.Application.deps.json
+C:\Users\marly\Desktop\Projetos .NET\ProjectSocial\CwkSocial.Application\bin\Debug\net6.0\CwkSocial.Application.dll
+C:\Users\marly\Desktop\Projetos .NET\ProjectSocial\CwkSocial.Application\bin\Debug\net6.0\ref\CwkSocial.Application.dll
+C:\Users\marly\Desktop\Projetos .NET\ProjectSocial\CwkSocial.Application\bin\Debug\net6.0\CwkSocial.Application.pdb
+C:\Users\marly\Desktop\Projetos .NET\ProjectSocial\CwkSocial.Application\obj\Debug\net6.0\CwkSocial.Application.csproj.AssemblyReference.cache
+C:\Users\marly\Desktop\Projetos .NET\ProjectSocial\CwkSocial.Application\obj\Debug\net6.0\CwkSocial.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\marly\Desktop\Projetos .NET\ProjectSocial\CwkSocial.Application\obj\Debug\net6.0\CwkSocial.Application.AssemblyInfoInputs.cache
+C:\Users\marly\Desktop\Projetos .NET\ProjectSocial\CwkSocial.Application\obj\Debug\net6.0\CwkSocial.Application.AssemblyInfo.cs
+C:\Users\marly\Desktop\Projetos .NET\ProjectSocial\CwkSocial.Application\obj\Debug\net6.0\CwkSocial.Application.csproj.CoreCompileInputs.cache
+C:\Users\marly\Desktop\Projetos .NET\ProjectSocial\CwkSocial.Application\obj\Debug\net6.0\CwkSocial.Application.dll
+C:\Users\marly\Desktop\Projetos .NET\ProjectSocial\CwkSocial.Application\obj\Debug\net6.0\ref\CwkSocial.Application.dll
+C:\Users\marly\Desktop\Projetos .NET\ProjectSocial\CwkSocial.Application\obj\Debug\net6.0\CwkSocial.Application.pdb
