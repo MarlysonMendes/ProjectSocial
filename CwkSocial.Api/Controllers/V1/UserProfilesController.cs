@@ -1,4 +1,7 @@
-﻿using CwkSocial.Api.Contracts.UserProfile.Requests;
+﻿using AutoMapper;
+using CwkSocial.Api.Contracts.UserProfile.Requests;
+using CwkSocial.Api.Contracts.UserProfile.Responses;
+using CwkSocial.Application.UserProfiles.Commands;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -10,9 +13,11 @@ namespace CwkSocial.Api.Controllers.V1
     public class UserProfilesController : Controller
     {
         private readonly IMediator _mediator;
-        public UserProfilesController(IMediator mediator)
+        private readonly IMapper _mapper;
+        public UserProfilesController(IMediator mediator, IMapper mapper)
         { 
             _mediator = mediator;
+            _mapper = mapper;
         }
 
         [HttpGet]
@@ -20,10 +25,25 @@ namespace CwkSocial.Api.Controllers.V1
         {
             return await Task.FromResult(Ok());
         }
-        [HttpPut]
+        [Route("{id}")]
+        [HttpGet]
+        public async Task<IActionResult> GetUserProfileById(string id)
+        {
+            return Ok();
+        }
+
+
+        [HttpPost]
         public async Task<IActionResult> CreateUserProfiles([FromBody] UserProfileCreate profile)
         {
-            return await Task.FromResult(Ok());
+            var command = _mapper.Map<CreateUserCommand>(profile);
+            var response = await _mediator.Send(command);
+            var userProfile = _mapper.Map<UserProfileResponse>(response);
+
+
+            return CreatedAtAction(nameof(GetUserProfileById), new {id = response.UserProfileId},userProfile);
         }
+
+       
     }
 }

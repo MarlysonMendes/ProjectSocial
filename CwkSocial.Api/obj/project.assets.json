@@ -2,7 +2,7 @@
   "version": 3,
   "targets": {
     "net6.0": {
-      "AutoMapper/11.0.0": {
+      "AutoMapper/11.0.1": {
         "type": "package",
         "dependencies": {
           "Microsoft.CSharp": "4.7.0"
@@ -848,6 +848,23 @@
           }
         }
       },
+      "CwkSocial.Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "AutoMapper": "11.0.1",
+          "CwkSocial.Dal": "1.0.0",
+          "CwkSocial.Domain": "1.0.0",
+          "MediatR": "10.0.1",
+          "Microsoft.EntityFrameworkCore": "6.0.3"
+        },
+        "compile": {
+          "bin/placeholder/CwkSocial.Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CwkSocial.Application.dll": {}
+        }
+      },
       "CwkSocial.Dal/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -877,15 +894,15 @@
     }
   },
   "libraries": {
-    "AutoMapper/11.0.0": {
-      "sha512": "+596AnKykYCk9RxXCEF4GYuapSebQtFVvIA1oVG1rrRkCLAC7AkWehJ0brCfYUbdDW3v1H/p0W3hob7JoXGjMw==",
+    "AutoMapper/11.0.1": {
+      "sha512": "WIadGC1pIwbnyTubvI577p3F++Bsj9q2Q3OaAc1I0QS+JhupN1xkdrPBhI9bPIeg63zM81tZplUNYkqU1HE5jQ==",
       "type": "package",
-      "path": "automapper/11.0.0",
+      "path": "automapper/11.0.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "README.md",
-        "automapper.11.0.0.nupkg.sha512",
+        "automapper.11.0.1.nupkg.sha512",
         "automapper.nuspec",
         "icon.png",
         "lib/netstandard2.1/AutoMapper.dll",
@@ -2420,6 +2437,11 @@
         "version.txt"
       ]
     },
+    "CwkSocial.Application/1.0.0": {
+      "type": "project",
+      "path": "../CwkSocial.Application/CwkSocial.Application.csproj",
+      "msbuildProject": "../CwkSocial.Application/CwkSocial.Application.csproj"
+    },
     "CwkSocial.Dal/1.0.0": {
       "type": "project",
       "path": "../CwkSocial.Dal/CwkSocial.Dal.csproj",
@@ -2434,6 +2456,7 @@
   "projectFileDependencyGroups": {
     "net6.0": [
       "AutoMapper.Extensions.Microsoft.DependencyInjection >= 11.0.0",
+      "CwkSocial.Application >= 1.0.0",
       "CwkSocial.Dal >= 1.0.0",
       "CwkSocial.Domain >= 1.0.0",
       "MediatR.Extensions.Microsoft.DependencyInjection >= 10.0.1",
@@ -2475,6 +2498,9 @@
           "projectReferences": {
             "C:\\Users\\marly\\Desktop\\Projetos .NET\\ProjectSocial\\Cwk.Domain\\CwkSocial.Domain.csproj": {
               "projectPath": "C:\\Users\\marly\\Desktop\\Projetos .NET\\ProjectSocial\\Cwk.Domain\\CwkSocial.Domain.csproj"
+            },
+            "C:\\Users\\marly\\Desktop\\Projetos .NET\\ProjectSocial\\CwkSocial.Application\\CwkSocial.Application.csproj": {
+              "projectPath": "C:\\Users\\marly\\Desktop\\Projetos .NET\\ProjectSocial\\CwkSocial.Application\\CwkSocial.Application.csproj"
             },
             "C:\\Users\\marly\\Desktop\\Projetos .NET\\ProjectSocial\\CwkSocial.Dal\\CwkSocial.Dal.csproj": {
               "projectPath": "C:\\Users\\marly\\Desktop\\Projetos .NET\\ProjectSocial\\CwkSocial.Dal\\CwkSocial.Dal.csproj"

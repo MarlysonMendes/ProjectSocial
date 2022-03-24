@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "DpneNjRz1f7O5hvZY8IQASKkqU4M2NLhIGgRSzK6xh4yPQqE9VVEq+0HdBEVosEqsCOgz8k/CxRtI1ZX75KYUw==",
+  "dgSpecHash": "Cpq0270x1USAzopbWKV8JyiLinnkO6JgsVEepNOy+8lRRVP8dVvp9iE/goA/Ul/jjkIeTFBdz1oBMy9a5Lg+Wg==",
   "success": true,
   "projectFilePath": "C:\\Users\\marly\\Desktop\\Projetos .NET\\ProjectSocial\\CwkSocial.Api\\CwkSocial.Api.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\marly\\.nuget\\packages\\automapper\\11.0.0\\automapper.11.0.0.nupkg.sha512",
+    "C:\\Users\\marly\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
     "C:\\Users\\marly\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\11.0.0\\automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",
     "C:\\Users\\marly\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\marly\\.nuget\\packages\\mediatr\\10.0.1\\mediatr.10.0.1.nupkg.sha512",
