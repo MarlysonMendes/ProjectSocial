@@ -20,7 +20,7 @@ namespace CwkSocial.Domain.Aggregates.PostAggregate
         public Guid PostId { get; private set; }
         public Guid UserProfileId { get; private set; }
         public UserProfile UserProfile { get; private set; }
-        public string TextContent { get; set; private }
+        public string TextContent { get; private set; }
         public DateTime CreatedDate { get; private set; }
         public DateTime LastModified { get; private set; }
 

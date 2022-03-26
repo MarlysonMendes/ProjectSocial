@@ -2,6 +2,7 @@
 using CwkSocial.Api.Contracts.UserProfile.Requests;
 using CwkSocial.Api.Contracts.UserProfile.Responses;
 using CwkSocial.Application.UserProfiles.Commands;
+using CwkSocial.Application.UserProfiles.Queries;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -23,13 +24,19 @@ namespace CwkSocial.Api.Controllers.V1
         [HttpGet]
         public async Task<IActionResult> GetAllProfiles()
         {
-            return await Task.FromResult(Ok());
+            var query = new GetAllUserProfileQuery();
+            var response = await _mediator.Send(query);
+            var profiles = _mapper.Map<List<UserProfileResponse>>(response);
+            return Ok(profiles);
         }
         [Route("{id}")]
         [HttpGet]
         public async Task<IActionResult> GetUserProfileById(string id)
         {
-            return Ok();
+            var query = new GetUserProfileByIdQuery { UserProfileId = Guid.Parse(id) };
+            var response = await _mediator.Send(query);
+            var profile = _mapper.Map<UserProfileResponse>(response);
+            return Ok(profile);
         }
 
 

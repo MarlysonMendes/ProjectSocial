@@ -70,3 +70,10 @@ C:\Users\marly\Desktop\Projetos .NET\ProjectSocial\CwkSocial.Api\bin\Debug\net6.
 C:\Users\marly\Desktop\Projetos .NET\ProjectSocial\CwkSocial.Api\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
 C:\Users\marly\Desktop\Projetos .NET\ProjectSocial\CwkSocial.Api\bin\Debug\net6.0\CwkSocial.Dal.dll
 C:\Users\marly\Desktop\Projetos .NET\ProjectSocial\CwkSocial.Api\bin\Debug\net6.0\CwkSocial.Dal.pdb
+C:\Users\marly\Desktop\Projetos .NET\ProjectSocial\CwkSocial.Api\bin\Debug\net6.0\AutoMapper.dll
+C:\Users\marly\Desktop\Projetos .NET\ProjectSocial\CwkSocial.Api\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\marly\Desktop\Projetos .NET\ProjectSocial\CwkSocial.Api\bin\Debug\net6.0\MediatR.dll
+C:\Users\marly\Desktop\Projetos .NET\ProjectSocial\CwkSocial.Api\bin\Debug\net6.0\MediatR.Contracts.dll
+C:\Users\marly\Desktop\Projetos .NET\ProjectSocial\CwkSocial.Api\bin\Debug\net6.0\MediatR.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\marly\Desktop\Projetos .NET\ProjectSocial\CwkSocial.Api\bin\Debug\net6.0\CwkSocial.Application.dll
+C:\Users\marly\Desktop\Projetos .NET\ProjectSocial\CwkSocial.Api\bin\Debug\net6.0\CwkSocial.Application.pdb

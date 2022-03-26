@@ -10,3 +10,8 @@ C:\Users\marly\Desktop\Projetos .NET\ProjectSocial\CwkSocial.Application\obj\Deb
 C:\Users\marly\Desktop\Projetos .NET\ProjectSocial\CwkSocial.Application\obj\Debug\net6.0\CwkSocial.Application.dll
 C:\Users\marly\Desktop\Projetos .NET\ProjectSocial\CwkSocial.Application\obj\Debug\net6.0\ref\CwkSocial.Application.dll
 C:\Users\marly\Desktop\Projetos .NET\ProjectSocial\CwkSocial.Application\obj\Debug\net6.0\CwkSocial.Application.pdb
+C:\Users\marly\Desktop\Projetos .NET\ProjectSocial\CwkSocial.Application\bin\Debug\net6.0\CwkSocial.Dal.dll
+C:\Users\marly\Desktop\Projetos .NET\ProjectSocial\CwkSocial.Application\bin\Debug\net6.0\CwkSocial.Domain.dll
+C:\Users\marly\Desktop\Projetos .NET\ProjectSocial\CwkSocial.Application\bin\Debug\net6.0\CwkSocial.Domain.pdb
+C:\Users\marly\Desktop\Projetos .NET\ProjectSocial\CwkSocial.Application\bin\Debug\net6.0\CwkSocial.Dal.pdb
+C:\Users\marly\Desktop\Projetos .NET\ProjectSocial\CwkSocial.Application\obj\Debug\net6.0\CwkSocial.Application.csproj.CopyComplete
