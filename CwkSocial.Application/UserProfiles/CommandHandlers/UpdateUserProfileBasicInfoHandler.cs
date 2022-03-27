@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 
 namespace CwkSocial.Application.UserProfiles.CommandHandlers
 {
-    internal class UpdateUserProfileBasicInfoHandler : IRequestHandler<UpdateUserProfileBasicInfo, OperationResult<UserProfile>>
+    public class UpdateUserProfileBasicInfoHandler : IRequestHandler<UpdateUserProfileBasicInfo, OperationResult<UserProfile>>
     {
         private readonly DataContext _ctx;
 
@@ -35,7 +35,7 @@ namespace CwkSocial.Application.UserProfiles.CommandHandlers
                 if(userProfile is null)
                 {
                     result.IsErro = true;
-                    var error = new Error { Code = ErrorCodes.NotFound, 
+                    var error = new Error { Code = ErrorCode.NotFound, 
                         Message = $"No UserProfile found with ID {request.UserProfileId} " };
                     result.Erros.Add(error);
                     return result;
@@ -52,7 +52,7 @@ namespace CwkSocial.Application.UserProfiles.CommandHandlers
             }
             catch (Exception ex)
             {
-                var error = new Error { Code = ErrorCodes.ServerError, Message = ex.Message };
+                var error = new Error { Code = ErrorCode.ServerError, Message = ex.Message };
                 result.IsErro = true;
                 result.Erros.Add(error);
             }

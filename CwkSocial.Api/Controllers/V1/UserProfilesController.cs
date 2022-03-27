@@ -1,21 +1,25 @@
 ﻿using AutoMapper;
+using CwkSocial.Api.Contracts.Common;
 using CwkSocial.Api.Contracts.UserProfile.Requests;
 using CwkSocial.Api.Contracts.UserProfile.Responses;
 using CwkSocial.Application.Enums;
+using CwkSocial.Application.Models;
 using CwkSocial.Application.UserProfiles.Commands;
 using CwkSocial.Application.UserProfiles.Queries;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using CwkSocial.Api.Controllers.V1;
 
 namespace CwkSocial.Api.Controllers.V1
 {
     [ApiVersion("1.0")]
     [Route(ApiRoutes.BaseRoute)]
     [ApiController]
-    public class UserProfilesController : Controller
+    public class UserProfilesController : ControllerBase
     {
         private readonly IMediator _mediator;
         private readonly IMapper _mapper;
+
         public UserProfilesController(IMediator mediator, IMapper mapper)
         { 
             _mediator = mediator;
@@ -65,24 +69,12 @@ namespace CwkSocial.Api.Controllers.V1
             command.UserProfileId = Guid.Parse(id);
             var response = await _mediator.Send(command);
 
-            if(response.IsErro)
-            {
-                if (response.Erros.Any(e => e.Code == ErrorCodes.NotFound))
-                {
-                    var error = response.Erros.FirstOrDefault(e => e.Code == ErrorCodes.NotFound);
+            var handleError = new HandlerError();
 
-                    return NotFound(error.Message) ;
-                }
-                if(response.Erros.Any(e => e.Code == ErrorCodes.ServerError))
-                {
-                    var error = response.Erros.FirstOrDefault(e => e.Code == ErrorCodes.ServerError);
-
-                    return StatusCode(500, error.Message);
-                }
-            }
-
-            return NoContent();
+            return response.IsErro ? handleError.HandleErrorResponse(response.Erros) : NoContent();
         }
+
+
 
         [HttpDelete]
         [Route(ApiRoutes.UserProfiles.IdRoute)]

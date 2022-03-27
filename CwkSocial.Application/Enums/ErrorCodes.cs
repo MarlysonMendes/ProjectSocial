@@ -1,6 +1,6 @@
 ﻿namespace CwkSocial.Application.Enums
 {
-    public enum ErrorCodes
+    public enum ErrorCode
     {
         NotFound = 404,
         ServerError = 500
