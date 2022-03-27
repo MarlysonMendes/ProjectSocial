@@ -22,7 +22,8 @@ namespace CwkSocial.Application.UserProfiles.QueryHandlers
 
         public async Task<UserProfile> Handle(GetUserProfileByIdQuery request, CancellationToken cancellationToken)
         {
-            return await _ctx.UserProfiles.FirstOrDefaultAsync(up => up.UserProfileId == request.UserProfileId);
+            return await _ctx.UserProfiles
+                .FirstOrDefaultAsync(up => up.UserProfileId == request.UserProfileId);
         }
     }
 }

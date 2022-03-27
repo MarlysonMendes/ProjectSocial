@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using CwkSocial.Api.Contracts.UserProfile.Requests;
 using CwkSocial.Api.Contracts.UserProfile.Responses;
+using CwkSocial.Application.Enums;
 using CwkSocial.Application.UserProfiles.Commands;
 using CwkSocial.Application.UserProfiles.Queries;
 using MediatR;
@@ -50,6 +51,9 @@ namespace CwkSocial.Api.Controllers.V1
             var query = new GetUserProfileByIdQuery { UserProfileId = Guid.Parse(id) };
             var response = await _mediator.Send(query);
             var profile = _mapper.Map<UserProfileResponse>(response);
+            
+            if(response == null) return NotFound($"No user with profile Id {id} found");
+            
             return Ok(profile);
         }
 
@@ -60,6 +64,22 @@ namespace CwkSocial.Api.Controllers.V1
             var command = _mapper.Map<UpdateUserProfileBasicInfo>(updatedProfile);
             command.UserProfileId = Guid.Parse(id);
             var response = await _mediator.Send(command);
+
+            if(response.IsErro)
+            {
+                if (response.Erros.Any(e => e.Code == ErrorCodes.NotFound))
+                {
+                    var error = response.Erros.FirstOrDefault(e => e.Code == ErrorCodes.NotFound);
+
+                    return NotFound(error.Message) ;
+                }
+                if(response.Erros.Any(e => e.Code == ErrorCodes.ServerError))
+                {
+                    var error = response.Erros.FirstOrDefault(e => e.Code == ErrorCodes.ServerError);
+
+                    return StatusCode(500, error.Message);
+                }
+            }
 
             return NoContent();
         }
