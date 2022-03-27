@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using CwkSocial.Application.Models;
 using CwkSocial.Application.UserProfiles.Commands;
 using CwkSocial.Dal;
 using CwkSocial.Domain.Aggregates.UserProfileAggregate;
@@ -11,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace CwkSocial.Application.UserProfiles.CommandHandlers
 {
-    public class CreateUserCommandHandler : IRequestHandler<CreateUserCommand, UserProfile>
+    public class CreateUserCommandHandler : IRequestHandler<CreateUserCommand, OperationResult<UserProfile>>
     {
         private readonly DataContext _ctx;
 
@@ -20,8 +21,10 @@ namespace CwkSocial.Application.UserProfiles.CommandHandlers
             _ctx = ctx;
         }
 
-        public async Task<UserProfile> Handle(CreateUserCommand request, CancellationToken cancellationToken)
+        public async Task<OperationResult<UserProfile>> Handle(CreateUserCommand request, CancellationToken cancellationToken)
         {
+            var result = new OperationResult<UserProfile>();
+
             var basicInfo = BasicInfo.CreateBasicInfo(request.FirstName,request.LastName,
                 request.EmailAddress, request.Phone, request.DateOfBirth, request.CurrentCity);
         
@@ -29,7 +32,10 @@ namespace CwkSocial.Application.UserProfiles.CommandHandlers
             
             _ctx.UserProfiles.Add(userProfile);
             await _ctx.SaveChangesAsync();
-            return userProfile;
+
+            result.PayLoad = userProfile;
+
+            return result;
         
         }
     }
