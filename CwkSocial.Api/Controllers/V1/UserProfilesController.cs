@@ -31,7 +31,7 @@ namespace CwkSocial.Api.Controllers.V1
         {
             var query = new GetAllUserProfileQuery();
             var response = await _mediator.Send(query);
-            var profiles = _mapper.Map<List<UserProfileResponse>>(response);
+            var profiles = _mapper.Map<List<UserProfileResponse>>(response.PayLoad);
             return Ok(profiles);
         }
 
@@ -41,9 +41,9 @@ namespace CwkSocial.Api.Controllers.V1
         {
             var command = _mapper.Map<CreateUserCommand>(profile);
             var response = await _mediator.Send(command);
-            var userProfile = _mapper.Map<UserProfileResponse>(response);
+            var userProfile = _mapper.Map<UserProfileResponse>(response.PayLoad);
 
-            return CreatedAtAction(nameof(GetUserProfileById), new { id = response.UserProfileId }, userProfile);
+            return CreatedAtAction(nameof(GetUserProfileById), new { id = userProfile.UserProfileId }, userProfile);
         }
 
 
@@ -54,9 +54,10 @@ namespace CwkSocial.Api.Controllers.V1
         {
             var query = new GetUserProfileByIdQuery { UserProfileId = Guid.Parse(id) };
             var response = await _mediator.Send(query);
-            var profile = _mapper.Map<UserProfileResponse>(response);
-            
-            if(response == null) return NotFound($"No user with profile Id {id} found");
+            var profile = _mapper.Map<UserProfileResponse>(response.PayLoad);
+            var handleError = new HandlerError();
+            if (response.IsErro)
+                return handleError.HandleErrorResponse(response.Erros);
             
             return Ok(profile);
         }
@@ -82,7 +83,10 @@ namespace CwkSocial.Api.Controllers.V1
         {
             var command = new DeleteUserProfile() { UserProfileId = Guid.Parse(id) };
             var response = await _mediator.Send(command);
-            return NoContent();
+
+            var handleError = new HandlerError();
+
+            return response.IsErro ? handleError.HandleErrorResponse(response.Erros) : NoContent();
         }
     }
 }

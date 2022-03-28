@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 
 namespace CwkSocial.Application.UserProfiles.CommandHandlers
 {
-    internal class DeleteUserProfileHandler : IRequestHandler<DeleteUserProfile, OperationResult<UserProfile>>>
+    internal class DeleteUserProfileHandler : IRequestHandler<DeleteUserProfile, OperationResult<UserProfile>>
     {
         private readonly DataContext _ctx;
         public DeleteUserProfileHandler(DataContext ctx)
