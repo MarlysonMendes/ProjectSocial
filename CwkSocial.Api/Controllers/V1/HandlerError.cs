@@ -13,14 +13,7 @@ namespace CwkSocial.Api.Controllers.V1
 
             if (errors.Any(e => e.Code == ErrorCode.NotFound))
             {
-                var error = errors.FirstOrDefault(e => e.Code == ErrorCode.NotFound);
-
-                apiError.StatusCode = 404;
-                apiError.StatusPhrase = "Not Found";
-                apiError.Timestamp = DateTime.Now;
-                apiError.Errors.Add(error.Message);
-
-                return NotFound(apiError);
+                
             }
 
 
