@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CwkSocial.Domain.Validators.UserProfileValidators;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,8 +21,9 @@ namespace CwkSocial.Domain.Aggregates.UserProfileAggregate
         public static BasicInfo CreateBasicInfo(string firstName, string lastName, string emailAddress,
             string phone, DateTime dateOfBirth, string currentCity)
         {
-            //TO DO: implement validation, error handling stragies, error notification strategies
-            return new BasicInfo
+            var validator = new BasicInfoValidator();
+            
+            var objToValidate = new BasicInfo
             {
                 FirstName = firstName,
                 LastName = lastName,
@@ -30,6 +32,12 @@ namespace CwkSocial.Domain.Aggregates.UserProfileAggregate
                 DateOfBirth = dateOfBirth,
                 CurrentCity = currentCity
             };
+            var validationResult = validator.Validate(objToValidate);
+
+            if (validationResult.IsValid) return objToValidate;
+
+
+        
         }
 
     }

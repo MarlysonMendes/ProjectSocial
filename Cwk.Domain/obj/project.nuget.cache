@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "m/hVJ5YApRjJ04sI8U75HUJuQjrs7IGjIlh9t1rYBIcg7umoZCd17nlRpq/axCAvfggImo6g6Aa2UEyVWcEsdw==",
+  "dgSpecHash": "E1GemsXymEgnfUU57NWMIh/n0VBtL5Vs2Gz8RqULLDvlsHWpPcR0bZf/KgPZVW4ZFmJDPVgud6Du6ZtVyuRtJw==",
   "success": true,
   "projectFilePath": "C:\\Users\\marly\\Desktop\\Projetos .NET\\ProjectSocial\\Cwk.Domain\\CwkSocial.Domain.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\marly\\.nuget\\packages\\fluentvalidation\\10.4.0\\fluentvalidation.10.4.0.nupkg.sha512"
+  ],
   "logs": []
 }

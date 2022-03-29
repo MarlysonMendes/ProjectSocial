@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "3l9oOGRfLCwq5rwvZ2NzdGb4So8vsgZhgwlWQWhCNY1OG9pPvUVJ2N//FWb8LbHeJ1N3ybgnZ2Xa6wn0soIr8Q==",
+  "dgSpecHash": "L5aqTupphJgjYYcEXJ7hL+Fg5derBXoY8/fY5bp2tbzW1R+mol89SL0B5hasaQHwGv4F2rQ68xGYJ73QTN7sxg==",
   "success": true,
   "projectFilePath": "C:\\Users\\marly\\Desktop\\Projetos .NET\\ProjectSocial\\CwkSocial.Application\\CwkSocial.Application.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\marly\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
+    "C:\\Users\\marly\\.nuget\\packages\\fluentvalidation\\10.4.0\\fluentvalidation.10.4.0.nupkg.sha512",
     "C:\\Users\\marly\\.nuget\\packages\\mediatr\\10.0.1\\mediatr.10.0.1.nupkg.sha512",
     "C:\\Users\\marly\\.nuget\\packages\\mediatr.contracts\\1.0.1\\mediatr.contracts.1.0.1.nupkg.sha512",
     "C:\\Users\\marly\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\6.0.3\\microsoft.aspnetcore.cryptography.internal.6.0.3.nupkg.sha512",
