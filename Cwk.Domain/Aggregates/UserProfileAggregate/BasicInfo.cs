@@ -1,4 +1,5 @@
-﻿using CwkSocial.Domain.Validators.UserProfileValidators;
+﻿using CwkSocial.Domain.Exceptions;
+using CwkSocial.Domain.Validators.UserProfileValidators;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -36,8 +37,12 @@ namespace CwkSocial.Domain.Aggregates.UserProfileAggregate
 
             if (validationResult.IsValid) return objToValidate;
 
-
-        
+            var exception = new UserProfileNotValidException( "The user profile is not valid");
+            foreach(var error in validationResult.Errors)
+            {
+                exception.ValidationErros.Add(error.ErrorMessage);
+            }
+            throw exception;
         }
 
     }

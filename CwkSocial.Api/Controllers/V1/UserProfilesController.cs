@@ -46,9 +46,12 @@ namespace CwkSocial.Api.Controllers.V1
         {
             var command = _mapper.Map<CreateUserCommand>(profile);
             var response = await _mediator.Send(command);
+            var handleError = new HandlerError();
+           
             var userProfile = _mapper.Map<UserProfileResponse>(response.PayLoad);
 
-            return CreatedAtAction(nameof(GetUserProfileById), new { id = userProfile.UserProfileId }, userProfile);
+            return response.IsErro? handleError.HandleErrorResponse(response.Erros)
+                :CreatedAtAction(nameof(GetUserProfileById), new { id = userProfile.UserProfileId }, userProfile);
         }
 
 
