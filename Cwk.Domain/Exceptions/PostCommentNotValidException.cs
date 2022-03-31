@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CwkSocial.Domain.Exceptions
 {
-    internal class PostCommentNotValidException : NotValidException
+    public class PostCommentNotValidException : NotValidException
     {
         internal PostCommentNotValidException() { }
         internal PostCommentNotValidException(string message) : base(message) { }

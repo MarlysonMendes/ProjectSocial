@@ -40,7 +40,7 @@ namespace CwkSocial.Domain.Aggregates.UserProfileAggregate
             var exception = new UserProfileNotValidException( "The user profile is not valid");
             foreach(var error in validationResult.Errors)
             {
-                exception.ValidationErros.Add(error.ErrorMessage);
+                exception.ValidationErrors.Add(error.ErrorMessage);
             }
             throw exception;
         }

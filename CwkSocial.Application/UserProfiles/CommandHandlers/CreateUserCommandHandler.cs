@@ -32,22 +32,22 @@ namespace CwkSocial.Application.UserProfiles.CommandHandlers
                 _ctx.UserProfiles.Add(userProfile);
                 await _ctx.SaveChangesAsync();
 
-                result.PayLoad = userProfile;
+                result.Payload = userProfile;
 
                 return result;
             }
 
             catch (UserProfileNotValidException ex)
             {
-                result.IsErro = true;
-                ex.ValidationErros.ForEach(e =>
+                result.IsError = true;
+                ex.ValidationErrors.ForEach(e =>
                {
                    var error = new Error
                    {
                        Code = ErrorCode.ValidationError,
                        Message = $"{ex.Message}"
                    };
-                   result.Erros.Add(error);
+                   result.Errors.Add(error);
                });
                 
                 return result;

@@ -26,7 +26,7 @@ namespace CwkSocial.Application.UserProfiles.QueryHandlers
         {  
             var result = new OperationResult<IEnumerable<UserProfile>>();
 
-            result.PayLoad =  await _ctx.UserProfiles.ToListAsync();
+            result.Payload =  await _ctx.UserProfiles.ToListAsync();
             return result;
         }
     }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CwkSocial.Domain.Exceptions
 {
-    internal class NotValidException : Exception
+    public class NotValidException : Exception
     {
         internal NotValidException()
         {

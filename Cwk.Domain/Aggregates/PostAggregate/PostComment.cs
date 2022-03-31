@@ -49,7 +49,7 @@ namespace CwkSocial.Domain.Aggregates.PostAggregate
 
             validationResult.Errors.ForEach(e =>
             {
-                exception.Errors.Add(e.ErrorMessage);
+                exception.ValidationErrors.Add(e.ErrorMessage);
             });
             throw exception;
 

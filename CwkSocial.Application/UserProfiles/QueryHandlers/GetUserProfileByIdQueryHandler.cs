@@ -30,17 +30,17 @@ namespace CwkSocial.Application.UserProfiles.QueryHandlers
 
             if (userProfile == null)
             {
-                result.IsErro = true;
+                result.IsError = true;
                 var error = new Error
                 {
                     Code = ErrorCode.NotFound,
                     Message = $"No userProfile found with ID {request.UserProfileId}"
                 };
-                result.Erros.Add(error);
+                result.Errors.Add(error);
                 return result;
             }
 
-            result.PayLoad = userProfile;
+            result.Payload = userProfile;
             return result;
         }
     }

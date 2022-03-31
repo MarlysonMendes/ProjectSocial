@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CwkSocial.Domain.Exceptions
 {
-    internal class UserProfileNotValidException : NotValidException
+    public class UserProfileNotValidException : NotValidException
     {
         internal UserProfileNotValidException() { }
         internal UserProfileNotValidException(string message) : base(message) { }

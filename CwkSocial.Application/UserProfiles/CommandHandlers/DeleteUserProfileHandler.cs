@@ -23,13 +23,13 @@ namespace CwkSocial.Application.UserProfiles.CommandHandlers
             
             if(userProfile == null)
             {
-                result.IsErro = true;
+                result.IsError = true;
                 var error = new Error
                 {
                     Code = ErrorCode.NotFound,
                     Message = $"No userProfile found with ID {request.UserProfileId}"
                 };
-                result.Erros.Add(error);
+                result.Errors.Add(error);
                 return result;
             }
 
@@ -38,7 +38,7 @@ namespace CwkSocial.Application.UserProfiles.CommandHandlers
             _ctx.UserProfiles.Remove(userProfile);
 
             await _ctx.SaveChangesAsync();
-            result.PayLoad = userProfile;
+            result.Payload = userProfile;
 
             return result;
         }

@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using CwkSocial.Domain.Aggregates.UserProfileAggregate;
+using CwkSocial.Domain.Exceptions;
+using CwkSocial.Domain.Validators.PostValidators;
 
 namespace CwkSocial.Domain.Aggregates.PostAggregate
 {
@@ -58,16 +60,35 @@ namespace CwkSocial.Domain.Aggregates.PostAggregate
         }
 
         //Public methods
+        /// <summary>
+        /// Updates the post text
+        /// </summary>
+        /// <param name="newText">The updated post text</param>
+        /// <exception cref="PostNotValidException"</exception>
         public void UpdatePostText(string newText)
         {
+            if (string.IsNullOrWhiteSpace(newText))
+            {
+                var exception = new PostNotValidException("Cannot update post" +
+                                                           "Post text is not valid");
+
+                exception.ValidationErrors.Add("The provided text is either null or contains onlu white space");
+                throw exception;
+            }
+
             TextContent = newText;
             LastModified = DateTime.UtcNow;
         }
 
+
+
         public void AddPostComment(PostComment newComment)
-        {
+        { 
+
             _comments.Add(newComment);
         }
+
+
         public void RemoveComment(PostComment toRemove)
         {
             _comments.Remove(toRemove);
