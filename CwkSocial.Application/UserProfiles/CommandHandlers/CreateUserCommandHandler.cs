@@ -1,16 +1,11 @@
-﻿using AutoMapper;
-using CwkSocial.Application.Enums;
+﻿using CwkSocial.Application.Enums;
 using CwkSocial.Application.Models;
 using CwkSocial.Application.UserProfiles.Commands;
 using CwkSocial.Dal;
 using CwkSocial.Domain.Aggregates.UserProfileAggregate;
 using CwkSocial.Domain.Exceptions;
 using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace CwkSocial.Application.UserProfiles.CommandHandlers
 {

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CwkSocial.Domain.Exceptions;
+using CwkSocial.Domain.Validators.PostValidators;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,9 +19,21 @@ namespace CwkSocial.Domain.Aggregates.PostAggregate
         public DateTime DateCreated { get; private set; }
         public DateTime LastModifed { get; private set; }
 
+        //Factories
+        /// <summary>
+        /// Creates a post comment
+        /// </summary>
+        /// <param name="postId">The ID of the post to which the comment belongs</param>
+        /// <param name="text">Text content of the comment</param>
+        /// <param name="userProfileId">The ID of the user who created the comment</param>
+        /// <returns><see cref="PostComment"/></returns>
+        /// <exception cref="PostCommentNotValidException">Thrown if the data provided for the post comment
+        /// is not valid</exception>
+
         public static PostComment CreatePostComment(Guid postId, string text, Guid userProfileId)
         {
-            return new PostComment
+            var validator = new PostCommentValidator();
+            var objectToValidate = new PostComment
             {
                 PostId = postId,
                 Text = text,
@@ -27,6 +41,18 @@ namespace CwkSocial.Domain.Aggregates.PostAggregate
                 DateCreated = DateTime.Now,
                 LastModifed = DateTime.Now
             };
+            var validationResult = validator.Validate(objectToValidate);
+
+            var exception = new PostCommentNotValidException("Post comment is not valid");
+
+            if (validationResult.IsValid) return objectToValidate;
+
+            validationResult.Errors.ForEach(e =>
+            {
+                exception.Errors.Add(e.ErrorMessage);
+            });
+            throw exception;
+
         }
 
         public void UpdateCommentText(string newText)

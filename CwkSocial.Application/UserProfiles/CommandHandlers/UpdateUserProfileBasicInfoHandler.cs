@@ -3,13 +3,10 @@ using CwkSocial.Application.Models;
 using CwkSocial.Application.UserProfiles.Commands;
 using CwkSocial.Dal;
 using CwkSocial.Domain.Aggregates.UserProfileAggregate;
+using CwkSocial.Domain.Exceptions;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace CwkSocial.Application.UserProfiles.CommandHandlers
 {
@@ -48,6 +45,21 @@ namespace CwkSocial.Application.UserProfiles.CommandHandlers
                 _ctx.UserProfiles.Update(userProfile);
                 await _ctx.SaveChangesAsync();
                 result.PayLoad = userProfile;
+                return result;
+            }
+            catch (UserProfileNotValidException ex)
+            {
+                result.IsErro = true;
+                ex.ValidationErros.ForEach(e =>
+                {
+                    var error = new Error
+                    {
+                        Code = ErrorCode.ValidationError,
+                        Message = $"{ex.Message}"
+                    };
+                    result.Erros.Add(error);
+                });
+
                 return result;
             }
             catch (Exception ex)

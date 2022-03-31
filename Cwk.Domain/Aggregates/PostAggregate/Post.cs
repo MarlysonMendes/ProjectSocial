@@ -30,10 +30,17 @@ namespace CwkSocial.Domain.Aggregates.PostAggregate
         public IEnumerable<PostInteraction> Interactions { get { return _interactions; } }
 
         //Factories
+        /// <summary>
+        /// Creates a new post instance
+        /// </summary>
+        /// <param name="userProfileId">User profile ID</param>
+        /// <param name="textContent">Post content</param>
+        /// <returns><see cref="Post"/></returns>
+        /// <exception cref="PostNotValidException"></exception>
         public static Post CreatePost(Guid userProfileId, string textContent)
         {
-           
-            return new Post
+            var validator = new PostValidator();
+            var objectToValidate = new Post
             {
                 UserProfileId = userProfileId,
                 TextContent = textContent,
@@ -41,6 +48,13 @@ namespace CwkSocial.Domain.Aggregates.PostAggregate
                 LastModified = DateTime.UtcNow,
             };
 
+            var validationResult = validator.Validate(objectToValidate);
+
+            if (validationResult.IsValid) return objectToValidate;
+
+            var exception = new PostNotValidException("Post is not valid");
+            validationResult.Errors.ForEach(vr => exception.ValidationErrors.Add(vr.ErrorMessage));
+            throw exception;
         }
 
         //Public methods

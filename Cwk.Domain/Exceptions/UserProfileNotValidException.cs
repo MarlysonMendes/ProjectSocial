@@ -6,18 +6,10 @@ using System.Threading.Tasks;
 
 namespace CwkSocial.Domain.Exceptions
 {
-    public class UserProfileNotValidException : Exception
+    internal class UserProfileNotValidException : NotValidException
     {
-        public UserProfileNotValidException()
-        {
-            ValidationErros = new List<string>();
-        }
-
-        public UserProfileNotValidException(string message) : base(message)
-        {
-            ValidationErros = new List<string>();
-        }
-    
-        public List<string> ValidationErros { get; set; }
+        internal UserProfileNotValidException() { }
+        internal UserProfileNotValidException(string message) : base(message) { }
+        internal UserProfileNotValidException(string message, Exception inner) : base(message, inner) { }
     }
 }
