@@ -30,8 +30,6 @@ namespace CwkSocial.Api.Controllers.V1
         [HttpGet]
         public async Task<IActionResult> GetAllProfiles()
         {
-            throw new NotImplementedException("Method not implemented");
-
 
             var query = new GetAllUserProfileQuery();
             var response = await _mediator.Send(query);

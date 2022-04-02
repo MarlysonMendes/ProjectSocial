@@ -28,6 +28,7 @@ namespace CwkSocial.Application.Posts.QueriesHandlers
             try
             {
                 var posts = await _ctx.Posts.ToListAsync();
+                result.Payload = posts;
             }
             catch (Exception e)
             {
