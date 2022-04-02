@@ -1,5 +1,8 @@
 ﻿using AutoMapper;
+using CwkSocial.Api.Contracts.Posts.Requests;
 using CwkSocial.Api.Contracts.Posts.Responses;
+using CwkSocial.Api.Filters;
+using CwkSocial.Application.Posts.Command;
 using CwkSocial.Application.
     Posts.Queries;
 using MediatR;
@@ -44,6 +47,56 @@ namespace CwkSocial.Api.Controllers.V1
             return result.IsError ? handleError.HandleErrorResponse(result.Errors) : Ok(mapped);
         }
 
+        [HttpPost]
+        [ValidateModel]
+        public async Task<IActionResult> CreatePost([FromBody] PostCreate newPost)
+        {
+            var commandPost = new CreatePostCommand()
+            {
+                UserProfileId = newPost.UserProfileId,
+                TextContent = newPost.TextContent
+            };
+
+            var result = await _mediator.Send(commandPost);
+            
+            var handleError = new HandlerError();
+            
+            var mapped = _mapper.Map<PostResponse>(result.Payload);
+
+            return result.IsError ? handleError.HandleErrorResponse(result.Errors)
+                : CreatedAtAction(nameof(GetById), new { id = result.Payload.UserProfileId }, mapped);
+        }
+
+        [HttpPatch]
+        [Route(ApiRoutes.Posts.IdRoute)]     
+        [ValidateModel]
+        public async Task<IActionResult> UpdatePostText ([FromBody] PostUpdate postUpdate, string id)
+        {
+            var commandUpdate = new UpdatePostTextCommand()
+            {
+                NewText = postUpdate.Text,
+                PostId = Guid.Parse(id)
+            };
+            var result = await _mediator.Send(commandUpdate);
+
+            var handleError = new HandlerError();   
+
+            return result.IsError ? handleError.HandleErrorResponse(result.Errors) : NoContent();
+
+        }
+        [HttpDelete]
+        [Route(ApiRoutes.Posts.IdRoute)]
+        [ValidateModel]
+        public async Task<IActionResult> DeletePost (string id)
+        {
+            var command = new DeletePostCommand { PostId  = Guid.Parse(id)};
+            var result = await _mediator.Send(command);
+
+
+            var handleError = new HandlerError();
+
+            return result.IsError ? handleError.HandleErrorResponse(result.Errors) : NotFound();
+        }
 
 
     }

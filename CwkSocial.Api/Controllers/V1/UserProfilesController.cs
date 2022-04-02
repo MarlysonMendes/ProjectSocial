@@ -35,7 +35,7 @@ namespace CwkSocial.Api.Controllers.V1
 
             var query = new GetAllUserProfileQuery();
             var response = await _mediator.Send(query);
-            var profiles = _mapper.Map<List<UserProfileResponse>>(response.PayLoad);
+            var profiles = _mapper.Map<List<UserProfileResponse>>(response.Payload);
             return Ok(profiles);
         }
 
@@ -48,9 +48,9 @@ namespace CwkSocial.Api.Controllers.V1
             var response = await _mediator.Send(command);
             var handleError = new HandlerError();
            
-            var userProfile = _mapper.Map<UserProfileResponse>(response.PayLoad);
+            var userProfile = _mapper.Map<UserProfileResponse>(response.Payload);
 
-            return response.IsErro? handleError.HandleErrorResponse(response.Erros)
+            return response.IsError? handleError.HandleErrorResponse(response.Errors)
                 :CreatedAtAction(nameof(GetUserProfileById), new { id = userProfile.UserProfileId }, userProfile);
         }
 
@@ -58,14 +58,15 @@ namespace CwkSocial.Api.Controllers.V1
 
         [Route(ApiRoutes.UserProfiles.IdRoute)]
         [HttpGet]
+        [ValidateModel]
         public async Task<IActionResult> GetUserProfileById(string id)
         {
             var query = new GetUserProfileByIdQuery { UserProfileId = Guid.Parse(id) };
             var response = await _mediator.Send(query);
-            var profile = _mapper.Map<UserProfileResponse>(response.PayLoad);
+            var profile = _mapper.Map<UserProfileResponse>(response.Payload);
             var handleError = new HandlerError();
-            if (response.IsErro)
-                return handleError.HandleErrorResponse(response.Erros);
+            if (response.IsError)
+                return handleError.HandleErrorResponse(response.Errors);
             
             return Ok(profile);
         }
@@ -81,12 +82,13 @@ namespace CwkSocial.Api.Controllers.V1
 
             var handleError = new HandlerError();
 
-            return response.IsErro ? handleError.HandleErrorResponse(response.Erros) : NoContent();
+            return response.IsError ? handleError.HandleErrorResponse(response.Errors) : NoContent();
         }
 
 
 
         [HttpDelete]
+        [ValidateModel]
         [Route(ApiRoutes.UserProfiles.IdRoute)]
         public async Task<IActionResult> DeleteUserProfile(string id)
         {
@@ -95,7 +97,7 @@ namespace CwkSocial.Api.Controllers.V1
 
             var handleError = new HandlerError();
 
-            return response.IsErro ? handleError.HandleErrorResponse(response.Erros) : NoContent();
+            return response.IsError ? handleError.HandleErrorResponse(response.Errors) : NoContent();
         }
     }
 }

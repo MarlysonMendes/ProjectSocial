@@ -49,10 +49,16 @@ namespace CwkSocial.Application.UserProfiles.CommandHandlers
                    };
                    result.Errors.Add(error);
                });
-                
-                return result;
             }
-        
+            catch (Exception ex) 
+            {
+                var error = new Error { Code = ErrorCode.UnknownError, Message = ex.Message };
+                result.Errors.Add(error);
+                result.IsError = true;
+            }
+
+            return result;
+
         }
     }
 }
