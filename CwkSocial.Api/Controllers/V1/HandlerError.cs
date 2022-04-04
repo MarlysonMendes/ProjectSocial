@@ -7,14 +7,10 @@ namespace CwkSocial.Api.Controllers.V1
 {
     public class HandlerError : ControllerBase
     {
+        
         public IActionResult HandleErrorResponse(List<Error> errors)
         {
             var apiError = new ErrorResponse();
-
-            if (errors.Any(e => e.Code == ErrorCode.NotFound))
-            {
-                
-            }
 
 
             apiError.StatusCode = 400;

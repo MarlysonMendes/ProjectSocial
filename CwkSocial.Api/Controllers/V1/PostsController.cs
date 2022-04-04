@@ -98,6 +98,19 @@ namespace CwkSocial.Api.Controllers.V1
             return result.IsError ? handleError.HandleErrorResponse(result.Errors) : NotFound();
         }
 
+        [HttpGet]
+        [Route(ApiRoutes.Posts.PostComments)]
+        public async Task<IActionResult> GetPostCommentsByPostId(string postId)
+        {
+            var query = new GetPostCommentsQuery { PostId = Guid.Parse(postId)};
+            var result= await _mediator.Send(query);
+            
+            var handleError = new HandlerError();
+            if(result.IsError) handleError.HandleErrorResponse(result.Errors);
+
+            var comments = _mapper.Map<List<PostCommentResponse>>(result.Payload);
+            return Ok(comments);
+        }
 
     }
 }
