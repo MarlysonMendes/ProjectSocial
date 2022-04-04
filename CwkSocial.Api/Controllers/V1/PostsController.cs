@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using CwkSocial.Api.Contracts.Common;
 using CwkSocial.Api.Contracts.Posts.Requests;
 using CwkSocial.Api.Contracts.Posts.Responses;
 using CwkSocial.Api.Filters;
@@ -112,5 +113,38 @@ namespace CwkSocial.Api.Controllers.V1
             return Ok(comments);
         }
 
+        [HttpPost]
+        [Route(ApiRoutes.Posts.PostComments)]
+        public async Task<IActionResult> addCommentToPost(string postId, [FromBody] PostCommentCreate comment)
+        {
+            var isValidGuid = Guid.TryParse(comment.UserProfileId, out var userProfileId);
+
+            if (!isValidGuid)
+            {
+                var apiError = new ErrorResponse();
+
+
+                apiError.StatusCode = 400;
+                apiError.StatusPhrase = "Bad request";
+                apiError.Timestamp = DateTime.Now;
+                apiError.Errors.Add("Provided UserProfile id is not in a valid Guid format");
+                return BadRequest(apiError);
+            }
+
+            var command = new CreatePostCommentCommand
+            { 
+                PostId = Guid.Parse(postId), 
+                UserProfileId = userProfileId,
+                CommentText = comment.Text
+            };
+
+            var result = await _mediator.Send(command);
+
+            var handleError = new HandlerError();
+            if (result.IsError) return handleError.HandleErrorResponse(result.Errors);
+
+            var newComment = _mapper.Map<PostCommentResponse>(result.Payload);
+            return Ok(result);
+        }
     }
 }
