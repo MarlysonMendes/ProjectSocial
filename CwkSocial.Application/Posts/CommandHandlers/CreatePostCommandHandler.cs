@@ -37,7 +37,7 @@ namespace CwkSocial.Application.Posts.CommandHandlers
             {
                 result.IsError = true;
                 e.ValidationErrors.ForEach(er =>
-                {
+                 {
                    var error = new Error { Code = ErrorCode.ValidationError, Message = $"{e.Message}" };
                    result.Errors.Add(error);
                 });
