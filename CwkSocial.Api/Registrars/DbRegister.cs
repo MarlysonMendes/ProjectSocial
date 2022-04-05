@@ -1,4 +1,5 @@
 ﻿using CwkSocial.Dal;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
 namespace CwkSocial.Api.Registrars
@@ -12,6 +13,8 @@ namespace CwkSocial.Api.Registrars
             {
                 options.UseSqlServer(cs);
             });
+            builder.Services.AddIdentityCore<IdentityUser>()
+                .AddEntityFrameworkStores<DataContext>();
         }
     }
 }

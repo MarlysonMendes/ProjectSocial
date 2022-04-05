@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CwkSocial.Application.Options
 {
-    public class JwtSettings
+    public class JwtSettings  
     {
         public string SingningKey { get; set; }
         public string Issuer { get; set; }
