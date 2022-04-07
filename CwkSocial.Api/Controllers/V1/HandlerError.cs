@@ -11,8 +11,6 @@ namespace CwkSocial.Api.Controllers.V1
         public IActionResult HandleErrorResponse(List<Error> errors)
         {
             var apiError = new ErrorResponse();
-
-
             apiError.StatusCode = 400;
             apiError.StatusPhrase = "Bad request";
             apiError.Timestamp = DateTime.Now;

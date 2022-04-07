@@ -21,12 +21,14 @@ namespace CwkSocial.Api.Filters
 
                 foreach(var error in errors)
                 {
-                    apiError.Errors.Add(error.Value.ToString());
+                    foreach(var inner in error.Value.Errors)
+                    {
+                        apiError.Errors.Add(inner.ErrorMessage);
+                    }
                 }
 
 
-                context.Result = new JsonResult(apiError) { StatusCode = 400} ;
-                //TO DO: Make sure Asp.Net Core doesn't oerride our action result body
+                context.Result = new BadRequestObjectResult(apiError);
             }
 
         }

@@ -16,5 +16,11 @@
             public const string CommentById = "{postId}/comments/{commentId}";
            
         }
+        public static class Identity
+        {
+            public const string = "login";
+            public const string Registration = "registration";
+        }
+
     }
 }

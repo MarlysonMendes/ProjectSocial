@@ -1,0 +1,393 @@
+﻿++Solução 'CwkSocial' ‎(4 de 4 projetos)
+i:{00000000-0000-0000-0000-000000000000}:CwkSocial.sln
+++CwkSocial.Domain
+i:{00000000-0000-0000-0000-000000000000}:CwkSocial.Domain
+i:{8e9c7bdc-f676-4fea-9444-827c77662c66}:c:\users\marly\desktop\projetos .net\projectsocial\cwk.domain\cwksocial.domain.csproj
+i:{3142db24-7d34-4433-acea-09834a854b6e}:c:\users\marly\desktop\projetos .net\projectsocial\cwk.domain\bin\debug\net6.0\cwksocial.domain.dll
+i:{caeaf1cb-d949-442b-95c7-3393288a87f5}:c:\users\marly\desktop\projetos .net\projectsocial\cwk.domain\cwksocial.domain.csproj
+++Dependências
+i:{101eb92e-3d87-4d3c-95f7-c5d4c184cacc}:>559
+i:{8e9c7bdc-f676-4fea-9444-827c77662c66}:>560
+i:{3142db24-7d34-4433-acea-09834a854b6e}:>561
+i:{caeaf1cb-d949-442b-95c7-3393288a87f5}:>737
+++Aggregates
+i:{101eb92e-3d87-4d3c-95f7-c5d4c184cacc}:c:\users\marly\desktop\projetos .net\projectsocial\cwk.domain\aggregates\
+++PostAggregate
+i:{101eb92e-3d87-4d3c-95f7-c5d4c184cacc}:c:\users\marly\desktop\projetos .net\projectsocial\cwk.domain\aggregates\postaggregate\
+++InteractionType.cs
+i:{101eb92e-3d87-4d3c-95f7-c5d4c184cacc}:c:\users\marly\desktop\projetos .net\projectsocial\cwk.domain\aggregates\postaggregate\interactiontype.cs
+++Post.cs
+i:{101eb92e-3d87-4d3c-95f7-c5d4c184cacc}:c:\users\marly\desktop\projetos .net\projectsocial\cwk.domain\aggregates\postaggregate\post.cs
+++PostComment.cs
+i:{101eb92e-3d87-4d3c-95f7-c5d4c184cacc}:c:\users\marly\desktop\projetos .net\projectsocial\cwk.domain\aggregates\postaggregate\postcomment.cs
+++PostInteraction.cs
+i:{101eb92e-3d87-4d3c-95f7-c5d4c184cacc}:c:\users\marly\desktop\projetos .net\projectsocial\cwk.domain\aggregates\postaggregate\postinteraction.cs
+++UserProfileAggregate
+i:{101eb92e-3d87-4d3c-95f7-c5d4c184cacc}:c:\users\marly\desktop\projetos .net\projectsocial\cwk.domain\aggregates\userprofileaggregate\
+++Exceptions
+i:{101eb92e-3d87-4d3c-95f7-c5d4c184cacc}:c:\users\marly\desktop\projetos .net\projectsocial\cwk.domain\exceptions\
+++NotValidException.cs
+i:{101eb92e-3d87-4d3c-95f7-c5d4c184cacc}:c:\users\marly\desktop\projetos .net\projectsocial\cwk.domain\exceptions\notvalidexception.cs
+++PostCommentNotValidException.cs
+i:{101eb92e-3d87-4d3c-95f7-c5d4c184cacc}:c:\users\marly\desktop\projetos .net\projectsocial\cwk.domain\exceptions\postcommentnotvalidexception.cs
+++PostNotValidException.cs
+i:{101eb92e-3d87-4d3c-95f7-c5d4c184cacc}:c:\users\marly\desktop\projetos .net\projectsocial\cwk.domain\exceptions\postnotvalidexception.cs
+++UserProfileNotValidException.cs
+i:{101eb92e-3d87-4d3c-95f7-c5d4c184cacc}:c:\users\marly\desktop\projetos .net\projectsocial\cwk.domain\exceptions\userprofilenotvalidexception.cs
+++Validators
+i:{101eb92e-3d87-4d3c-95f7-c5d4c184cacc}:c:\users\marly\desktop\projetos .net\projectsocial\cwk.domain\validators\
+++Analisadores
+i:{101eb92e-3d87-4d3c-95f7-c5d4c184cacc}:analisadores
+i:{8e9c7bdc-f676-4fea-9444-827c77662c66}:analisadores
+i:{3142db24-7d34-4433-acea-09834a854b6e}:analisadores
+i:{caeaf1cb-d949-442b-95c7-3393288a87f5}:analisadores
+++Estruturas
+i:{101eb92e-3d87-4d3c-95f7-c5d4c184cacc}:estruturas
+i:{8e9c7bdc-f676-4fea-9444-827c77662c66}:estruturas
+i:{3142db24-7d34-4433-acea-09834a854b6e}:estruturas
+i:{caeaf1cb-d949-442b-95c7-3393288a87f5}:estruturas
+++Pacotes
+i:{101eb92e-3d87-4d3c-95f7-c5d4c184cacc}:pacotes
+i:{8e9c7bdc-f676-4fea-9444-827c77662c66}:pacotes
+i:{3142db24-7d34-4433-acea-09834a854b6e}:pacotes
+i:{caeaf1cb-d949-442b-95c7-3393288a87f5}:pacotes
+++BasicInfo.cs
+i:{101eb92e-3d87-4d3c-95f7-c5d4c184cacc}:c:\users\marly\desktop\projetos .net\projectsocial\cwk.domain\aggregates\userprofileaggregate\basicinfo.cs
+++UserProfile.cs
+i:{101eb92e-3d87-4d3c-95f7-c5d4c184cacc}:c:\users\marly\desktop\projetos .net\projectsocial\cwk.domain\aggregates\userprofileaggregate\userprofile.cs
+++PostValidators
+i:{101eb92e-3d87-4d3c-95f7-c5d4c184cacc}:c:\users\marly\desktop\projetos .net\projectsocial\cwk.domain\validators\postvalidators\
+++UserProfileValidators
+i:{101eb92e-3d87-4d3c-95f7-c5d4c184cacc}:c:\users\marly\desktop\projetos .net\projectsocial\cwk.domain\validators\userprofilevalidators\
+++Microsoft.CodeAnalysis.CSharp.NetAnalyzers
+i:{101eb92e-3d87-4d3c-95f7-c5d4c184cacc}:c:\program files\dotnet\sdk\6.0.101\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.csharp.netanalyzers.dll
+i:{8e9c7bdc-f676-4fea-9444-827c77662c66}:c:\program files\dotnet\sdk\6.0.101\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.csharp.netanalyzers.dll
+i:{3142db24-7d34-4433-acea-09834a854b6e}:c:\program files\dotnet\sdk\6.0.101\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.csharp.netanalyzers.dll
+i:{caeaf1cb-d949-442b-95c7-3393288a87f5}:c:\program files\dotnet\sdk\6.0.101\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.csharp.netanalyzers.dll
+++Microsoft.CodeAnalysis.NetAnalyzers
+i:{101eb92e-3d87-4d3c-95f7-c5d4c184cacc}:c:\program files\dotnet\sdk\6.0.101\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.netanalyzers.dll
+i:{8e9c7bdc-f676-4fea-9444-827c77662c66}:c:\program files\dotnet\sdk\6.0.101\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.netanalyzers.dll
+i:{3142db24-7d34-4433-acea-09834a854b6e}:c:\program files\dotnet\sdk\6.0.101\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.netanalyzers.dll
+i:{caeaf1cb-d949-442b-95c7-3393288a87f5}:c:\program files\dotnet\sdk\6.0.101\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.netanalyzers.dll
+++System.Text.Json.SourceGeneration
+i:{101eb92e-3d87-4d3c-95f7-c5d4c184cacc}:c:\program files\dotnet\packs\microsoft.netcore.app.ref\6.0.1\analyzers\dotnet\cs\system.text.json.sourcegeneration.dll
+i:{8e9c7bdc-f676-4fea-9444-827c77662c66}:c:\program files\dotnet\packs\microsoft.netcore.app.ref\6.0.1\analyzers\dotnet\cs\system.text.json.sourcegeneration.dll
+i:{3142db24-7d34-4433-acea-09834a854b6e}:c:\program files\dotnet\packs\microsoft.netcore.app.ref\6.0.1\analyzers\dotnet\cs\system.text.json.sourcegeneration.dll
+i:{caeaf1cb-d949-442b-95c7-3393288a87f5}:c:\program files\dotnet\packs\microsoft.netcore.app.ref\6.0.1\analyzers\dotnet\cs\system.text.json.sourcegeneration.dll
+++Microsoft.NETCore.App
+i:{101eb92e-3d87-4d3c-95f7-c5d4c184cacc}:c:\users\marly\desktop\projetos .net\projectsocial\cwk.domain\microsoft.netcore.app
+i:{8e9c7bdc-f676-4fea-9444-827c77662c66}:c:\users\marly\desktop\projetos .net\projectsocial\cwksocial.application\microsoft.netcore.app
+i:{3142db24-7d34-4433-acea-09834a854b6e}:c:\users\marly\desktop\projetos .net\projectsocial\cwksocial.dal\microsoft.netcore.app
+i:{caeaf1cb-d949-442b-95c7-3393288a87f5}:c:\users\marly\desktop\projetos .net\projectsocial\cwksocial.api\microsoft.netcore.app
+++FluentValidation (10.4.0)
+i:{101eb92e-3d87-4d3c-95f7-c5d4c184cacc}:>791
+++PostCommentValidator.cs
+i:{101eb92e-3d87-4d3c-95f7-c5d4c184cacc}:c:\users\marly\desktop\projetos .net\projectsocial\cwk.domain\validators\postvalidators\postcommentvalidator.cs
+++PostValidator.cs
+i:{101eb92e-3d87-4d3c-95f7-c5d4c184cacc}:c:\users\marly\desktop\projetos .net\projectsocial\cwk.domain\validators\postvalidators\postvalidator.cs
+++BasicInfoValidator.cs
+i:{101eb92e-3d87-4d3c-95f7-c5d4c184cacc}:c:\users\marly\desktop\projetos .net\projectsocial\cwk.domain\validators\userprofilevalidators\basicinfovalidator.cs
+++CwkSocial.Application
+i:{00000000-0000-0000-0000-000000000000}:CwkSocial.Application
+i:{caeaf1cb-d949-442b-95c7-3393288a87f5}:c:\users\marly\desktop\projetos .net\projectsocial\cwksocial.application\cwksocial.application.csproj
+++Enums
+i:{8e9c7bdc-f676-4fea-9444-827c77662c66}:c:\users\marly\desktop\projetos .net\projectsocial\cwksocial.application\enums\
+++MappingProfiles
+i:{8e9c7bdc-f676-4fea-9444-827c77662c66}:c:\users\marly\desktop\projetos .net\projectsocial\cwksocial.application\mappingprofiles\
+i:{caeaf1cb-d949-442b-95c7-3393288a87f5}:c:\users\marly\desktop\projetos .net\projectsocial\cwksocial.api\mappingprofiles\
+++Models
+i:{8e9c7bdc-f676-4fea-9444-827c77662c66}:c:\users\marly\desktop\projetos .net\projectsocial\cwksocial.application\models\
+++Options
+i:{8e9c7bdc-f676-4fea-9444-827c77662c66}:c:\users\marly\desktop\projetos .net\projectsocial\cwksocial.application\options\
+i:{caeaf1cb-d949-442b-95c7-3393288a87f5}:c:\users\marly\desktop\projetos .net\projectsocial\cwksocial.api\options\
+++JwtSettings.cs
+i:{8e9c7bdc-f676-4fea-9444-827c77662c66}:c:\users\marly\desktop\projetos .net\projectsocial\cwksocial.application\options\jwtsettings.cs
+++Posts
+i:{8e9c7bdc-f676-4fea-9444-827c77662c66}:c:\users\marly\desktop\projetos .net\projectsocial\cwksocial.application\posts\
+i:{caeaf1cb-d949-442b-95c7-3393288a87f5}:c:\users\marly\desktop\projetos .net\projectsocial\cwksocial.api\contracts\posts\
+++Command
+i:{8e9c7bdc-f676-4fea-9444-827c77662c66}:c:\users\marly\desktop\projetos .net\projectsocial\cwksocial.application\posts\command\
+++CommandHandlers
+i:{8e9c7bdc-f676-4fea-9444-827c77662c66}:c:\users\marly\desktop\projetos .net\projectsocial\cwksocial.application\posts\commandhandlers\
+i:{8e9c7bdc-f676-4fea-9444-827c77662c66}:c:\users\marly\desktop\projetos .net\projectsocial\cwksocial.application\userprofiles\commandhandlers\
+++Queries
+i:{8e9c7bdc-f676-4fea-9444-827c77662c66}:c:\users\marly\desktop\projetos .net\projectsocial\cwksocial.application\posts\queries\
+i:{8e9c7bdc-f676-4fea-9444-827c77662c66}:c:\users\marly\desktop\projetos .net\projectsocial\cwksocial.application\userprofiles\queries\
+++QueriesHandlers
+i:{8e9c7bdc-f676-4fea-9444-827c77662c66}:c:\users\marly\desktop\projetos .net\projectsocial\cwksocial.application\posts\querieshandlers\
+++UserProfiles
+i:{8e9c7bdc-f676-4fea-9444-827c77662c66}:c:\users\marly\desktop\projetos .net\projectsocial\cwksocial.application\userprofiles\
+++Commands
+i:{8e9c7bdc-f676-4fea-9444-827c77662c66}:c:\users\marly\desktop\projetos .net\projectsocial\cwksocial.application\userprofiles\commands\
+i:{8e9c7bdc-f676-4fea-9444-827c77662c66}:c:\users\marly\desktop\projetos .net\projectsocial\cwksocial.application\identity\commands\
+++QueryHandlers
+i:{8e9c7bdc-f676-4fea-9444-827c77662c66}:c:\users\marly\desktop\projetos .net\projectsocial\cwksocial.application\userprofiles\queryhandlers\
+++Projetos
+i:{8e9c7bdc-f676-4fea-9444-827c77662c66}:projetos
+i:{3142db24-7d34-4433-acea-09834a854b6e}:projetos
+i:{caeaf1cb-d949-442b-95c7-3393288a87f5}:projetos
+++ErrorCodes.cs
+i:{8e9c7bdc-f676-4fea-9444-827c77662c66}:c:\users\marly\desktop\projetos .net\projectsocial\cwksocial.application\enums\errorcodes.cs
+++UserProfileMap.cs
+i:{8e9c7bdc-f676-4fea-9444-827c77662c66}:c:\users\marly\desktop\projetos .net\projectsocial\cwksocial.application\mappingprofiles\userprofilemap.cs
+++Error.cs
+i:{8e9c7bdc-f676-4fea-9444-827c77662c66}:c:\users\marly\desktop\projetos .net\projectsocial\cwksocial.application\models\error.cs
+++OperationResult.cs
+i:{8e9c7bdc-f676-4fea-9444-827c77662c66}:c:\users\marly\desktop\projetos .net\projectsocial\cwksocial.application\models\operationresult.cs
+++CreatePostCommand.cs
+i:{8e9c7bdc-f676-4fea-9444-827c77662c66}:c:\users\marly\desktop\projetos .net\projectsocial\cwksocial.application\posts\command\createpostcommand.cs
+++CreatePostCommentCommand.cs
+i:{8e9c7bdc-f676-4fea-9444-827c77662c66}:c:\users\marly\desktop\projetos .net\projectsocial\cwksocial.application\posts\command\createpostcommentcommand.cs
+++DeletePostCommand.cs
+i:{8e9c7bdc-f676-4fea-9444-827c77662c66}:c:\users\marly\desktop\projetos .net\projectsocial\cwksocial.application\posts\command\deletepostcommand.cs
+++UpdatePostTextCommand.cs
+i:{8e9c7bdc-f676-4fea-9444-827c77662c66}:c:\users\marly\desktop\projetos .net\projectsocial\cwksocial.application\posts\command\updateposttextcommand.cs
+++CreatePostCommandHandler.cs
+i:{8e9c7bdc-f676-4fea-9444-827c77662c66}:c:\users\marly\desktop\projetos .net\projectsocial\cwksocial.application\posts\commandhandlers\createpostcommandhandler.cs
+++CreatePostCommentCommandHandler.cs
+i:{8e9c7bdc-f676-4fea-9444-827c77662c66}:c:\users\marly\desktop\projetos .net\projectsocial\cwksocial.application\posts\commandhandlers\createpostcommentcommandhandler.cs
+++DeletePostCommandHandler.cs
+i:{8e9c7bdc-f676-4fea-9444-827c77662c66}:c:\users\marly\desktop\projetos .net\projectsocial\cwksocial.application\posts\commandhandlers\deletepostcommandhandler.cs
+++UpdatePostTextCommandHandler.cs
+i:{8e9c7bdc-f676-4fea-9444-827c77662c66}:c:\users\marly\desktop\projetos .net\projectsocial\cwksocial.application\posts\commandhandlers\updateposttextcommandhandler.cs
+++GetAllPostsQuery.cs
+i:{8e9c7bdc-f676-4fea-9444-827c77662c66}:c:\users\marly\desktop\projetos .net\projectsocial\cwksocial.application\posts\queries\getallpostsquery.cs
+++GetPostByIdQuery.cs
+i:{8e9c7bdc-f676-4fea-9444-827c77662c66}:c:\users\marly\desktop\projetos .net\projectsocial\cwksocial.application\posts\queries\getpostbyidquery.cs
+++GetPostCommentsQuery.cs
+i:{8e9c7bdc-f676-4fea-9444-827c77662c66}:c:\users\marly\desktop\projetos .net\projectsocial\cwksocial.application\posts\queries\getpostcommentsquery.cs
+++GetAllPostsHandler.cs
+i:{8e9c7bdc-f676-4fea-9444-827c77662c66}:c:\users\marly\desktop\projetos .net\projectsocial\cwksocial.application\posts\querieshandlers\getallpostshandler.cs
+++GetPostByIdHandler.cs
+i:{8e9c7bdc-f676-4fea-9444-827c77662c66}:c:\users\marly\desktop\projetos .net\projectsocial\cwksocial.application\posts\querieshandlers\getpostbyidhandler.cs
+++GetPostCommentsHandler.cs
+i:{8e9c7bdc-f676-4fea-9444-827c77662c66}:c:\users\marly\desktop\projetos .net\projectsocial\cwksocial.application\posts\querieshandlers\getpostcommentshandler.cs
+++CreateUserCommandHandler.cs
+i:{8e9c7bdc-f676-4fea-9444-827c77662c66}:c:\users\marly\desktop\projetos .net\projectsocial\cwksocial.application\userprofiles\commandhandlers\createusercommandhandler.cs
+++DeleteUserProfileHandler.cs
+i:{8e9c7bdc-f676-4fea-9444-827c77662c66}:c:\users\marly\desktop\projetos .net\projectsocial\cwksocial.application\userprofiles\commandhandlers\deleteuserprofilehandler.cs
+++UpdateUserProfileBasicInfoHandler.cs
+i:{8e9c7bdc-f676-4fea-9444-827c77662c66}:c:\users\marly\desktop\projetos .net\projectsocial\cwksocial.application\userprofiles\commandhandlers\updateuserprofilebasicinfohandler.cs
+++CreateUserCommand.cs
+i:{8e9c7bdc-f676-4fea-9444-827c77662c66}:c:\users\marly\desktop\projetos .net\projectsocial\cwksocial.application\userprofiles\commands\createusercommand.cs
+++DeleteUserProfile.cs
+i:{8e9c7bdc-f676-4fea-9444-827c77662c66}:c:\users\marly\desktop\projetos .net\projectsocial\cwksocial.application\userprofiles\commands\deleteuserprofile.cs
+++UpdateUserProfileBasicInfo.cs
+i:{8e9c7bdc-f676-4fea-9444-827c77662c66}:c:\users\marly\desktop\projetos .net\projectsocial\cwksocial.application\userprofiles\commands\updateuserprofilebasicinfo.cs
+++GetAllUserProfileQuery.cs
+i:{8e9c7bdc-f676-4fea-9444-827c77662c66}:c:\users\marly\desktop\projetos .net\projectsocial\cwksocial.application\userprofiles\queries\getalluserprofilequery.cs
+++GetUserProfileByIdQuery.cs
+i:{8e9c7bdc-f676-4fea-9444-827c77662c66}:c:\users\marly\desktop\projetos .net\projectsocial\cwksocial.application\userprofiles\queries\getuserprofilebyidquery.cs
+++GetAllUserProfilesQueryHandler.cs
+i:{8e9c7bdc-f676-4fea-9444-827c77662c66}:c:\users\marly\desktop\projetos .net\projectsocial\cwksocial.application\userprofiles\queryhandlers\getalluserprofilesqueryhandler.cs
+++GetUserProfileByIdQueryHandler.cs
+i:{8e9c7bdc-f676-4fea-9444-827c77662c66}:c:\users\marly\desktop\projetos .net\projectsocial\cwksocial.application\userprofiles\queryhandlers\getuserprofilebyidqueryhandler.cs
+++Microsoft.EntityFrameworkCore.Analyzers
+i:{8e9c7bdc-f676-4fea-9444-827c77662c66}:c:\users\marly\.nuget\packages\microsoft.entityframeworkcore.analyzers\6.0.3\analyzers\dotnet\cs\microsoft.entityframeworkcore.analyzers.dll
+i:{3142db24-7d34-4433-acea-09834a854b6e}:c:\users\marly\.nuget\packages\microsoft.entityframeworkcore.analyzers\6.0.3\analyzers\dotnet\cs\microsoft.entityframeworkcore.analyzers.dll
+i:{caeaf1cb-d949-442b-95c7-3393288a87f5}:c:\users\marly\.nuget\packages\microsoft.entityframeworkcore.analyzers\6.0.3\analyzers\dotnet\cs\microsoft.entityframeworkcore.analyzers.dll
+++Microsoft.Extensions.Logging.Generators
+i:{8e9c7bdc-f676-4fea-9444-827c77662c66}:c:\users\marly\.nuget\packages\microsoft.extensions.logging.abstractions\6.0.0\analyzers\dotnet\roslyn4.0\cs\microsoft.extensions.logging.generators.dll
+i:{3142db24-7d34-4433-acea-09834a854b6e}:c:\users\marly\.nuget\packages\microsoft.extensions.logging.abstractions\6.0.0\analyzers\dotnet\roslyn4.0\cs\microsoft.extensions.logging.generators.dll
+i:{caeaf1cb-d949-442b-95c7-3393288a87f5}:c:\program files\dotnet\packs\microsoft.aspnetcore.app.ref\6.0.0\analyzers\dotnet\roslyn4.0\cs\microsoft.extensions.logging.generators.dll
+++AutoMapper (11.0.1)
+i:{8e9c7bdc-f676-4fea-9444-827c77662c66}:>772
+++MediatR (10.0.1)
+i:{8e9c7bdc-f676-4fea-9444-827c77662c66}:>771
+++Microsoft.EntityFrameworkCore (6.0.3)
+i:{8e9c7bdc-f676-4fea-9444-827c77662c66}:>770
+i:{3142db24-7d34-4433-acea-09834a854b6e}:>793
+i:{caeaf1cb-d949-442b-95c7-3393288a87f5}:>751
+++CwkSocial.Dal
+i:{8e9c7bdc-f676-4fea-9444-827c77662c66}:c:\users\marly\desktop\projetos .net\projectsocial\cwksocial.dal\cwksocial.dal.csproj
+i:{00000000-0000-0000-0000-000000000000}:CwkSocial.Dal
+i:{caeaf1cb-d949-442b-95c7-3393288a87f5}:c:\users\marly\desktop\projetos .net\projectsocial\cwksocial.dal\cwksocial.dal.csproj
+++Configurations
+i:{3142db24-7d34-4433-acea-09834a854b6e}:c:\users\marly\desktop\projetos .net\projectsocial\cwksocial.dal\configurations\
+++Migrations
+i:{3142db24-7d34-4433-acea-09834a854b6e}:c:\users\marly\desktop\projetos .net\projectsocial\cwksocial.dal\migrations\
+++DataContext.cs
+i:{3142db24-7d34-4433-acea-09834a854b6e}:c:\users\marly\desktop\projetos .net\projectsocial\cwksocial.dal\datacontext.cs
+++BasicInfoConfig.cs
+i:{3142db24-7d34-4433-acea-09834a854b6e}:c:\users\marly\desktop\projetos .net\projectsocial\cwksocial.dal\configurations\basicinfoconfig.cs
+++IdentityUserLoginConfig.cs
+i:{3142db24-7d34-4433-acea-09834a854b6e}:c:\users\marly\desktop\projetos .net\projectsocial\cwksocial.dal\configurations\identityuserloginconfig.cs
+++IdentityUserRoleConfig.cs
+i:{3142db24-7d34-4433-acea-09834a854b6e}:c:\users\marly\desktop\projetos .net\projectsocial\cwksocial.dal\configurations\identityuserroleconfig.cs
+++IdentityUserTokenConfig.cs
+i:{3142db24-7d34-4433-acea-09834a854b6e}:c:\users\marly\desktop\projetos .net\projectsocial\cwksocial.dal\configurations\identityusertokenconfig.cs
+++PostCommentConfig.cs
+i:{3142db24-7d34-4433-acea-09834a854b6e}:c:\users\marly\desktop\projetos .net\projectsocial\cwksocial.dal\configurations\postcommentconfig.cs
+++PostInteractionConfig.cs
+i:{3142db24-7d34-4433-acea-09834a854b6e}:c:\users\marly\desktop\projetos .net\projectsocial\cwksocial.dal\configurations\postinteractionconfig.cs
+++UserProfileConfig.cs
+i:{3142db24-7d34-4433-acea-09834a854b6e}:c:\users\marly\desktop\projetos .net\projectsocial\cwksocial.dal\configurations\userprofileconfig.cs
+++20220323044526_Initial.cs
+i:{3142db24-7d34-4433-acea-09834a854b6e}:c:\users\marly\desktop\projetos .net\projectsocial\cwksocial.dal\migrations\20220323044526_initial.cs
+++DataContextModelSnapshot.cs
+i:{3142db24-7d34-4433-acea-09834a854b6e}:c:\users\marly\desktop\projetos .net\projectsocial\cwksocial.dal\migrations\datacontextmodelsnapshot.cs
+++Microsoft.AspNetCore.Identity.EntityFrameworkCore (6.0.3)
+i:{3142db24-7d34-4433-acea-09834a854b6e}:>795
+++Microsoft.EntityFrameworkCore.SqlServer (6.0.3)
+i:{3142db24-7d34-4433-acea-09834a854b6e}:>794
+i:{caeaf1cb-d949-442b-95c7-3393288a87f5}:>753
+++Microsoft.EntityFrameworkCore.Tools (6.0.3)
+i:{3142db24-7d34-4433-acea-09834a854b6e}:>796
+i:{caeaf1cb-d949-442b-95c7-3393288a87f5}:>758
+++20220323044526_Initial.Designer.cs
+i:{3142db24-7d34-4433-acea-09834a854b6e}:c:\users\marly\desktop\projetos .net\projectsocial\cwksocial.dal\migrations\20220323044526_initial.designer.cs
+++CwkSocial.Api
+i:{00000000-0000-0000-0000-000000000000}:CwkSocial.Api
+++Connected Services 
+i:{caeaf1cb-d949-442b-95c7-3393288a87f5}:>738
+++Properties
+i:{caeaf1cb-d949-442b-95c7-3393288a87f5}:c:\users\marly\desktop\projetos .net\projectsocial\cwksocial.api\properties\
+++Contracts
+i:{caeaf1cb-d949-442b-95c7-3393288a87f5}:c:\users\marly\desktop\projetos .net\projectsocial\cwksocial.api\contracts\
+++Common
+i:{caeaf1cb-d949-442b-95c7-3393288a87f5}:c:\users\marly\desktop\projetos .net\projectsocial\cwksocial.api\contracts\common\
+++Identity
+i:{caeaf1cb-d949-442b-95c7-3393288a87f5}:c:\users\marly\desktop\projetos .net\projectsocial\cwksocial.api\contracts\identity\
+i:{8e9c7bdc-f676-4fea-9444-827c77662c66}:c:\users\marly\desktop\projetos .net\projectsocial\cwksocial.application\identity\
+++Login.cs
+i:{caeaf1cb-d949-442b-95c7-3393288a87f5}:c:\users\marly\desktop\projetos .net\projectsocial\cwksocial.api\contracts\identity\login.cs
+++UserRegistration.cs
+i:{caeaf1cb-d949-442b-95c7-3393288a87f5}:c:\users\marly\desktop\projetos .net\projectsocial\cwksocial.api\contracts\identity\userregistration.cs
+++Requests
+i:{caeaf1cb-d949-442b-95c7-3393288a87f5}:c:\users\marly\desktop\projetos .net\projectsocial\cwksocial.api\contracts\posts\requests\
+i:{caeaf1cb-d949-442b-95c7-3393288a87f5}:c:\users\marly\desktop\projetos .net\projectsocial\cwksocial.api\contracts\userprofile\requests\
+++Responses
+i:{caeaf1cb-d949-442b-95c7-3393288a87f5}:c:\users\marly\desktop\projetos .net\projectsocial\cwksocial.api\contracts\posts\responses\
+i:{caeaf1cb-d949-442b-95c7-3393288a87f5}:c:\users\marly\desktop\projetos .net\projectsocial\cwksocial.api\contracts\userprofile\responses\
+++UserProfile
+i:{caeaf1cb-d949-442b-95c7-3393288a87f5}:c:\users\marly\desktop\projetos .net\projectsocial\cwksocial.api\contracts\userprofile\
+++Controllers
+i:{caeaf1cb-d949-442b-95c7-3393288a87f5}:c:\users\marly\desktop\projetos .net\projectsocial\cwksocial.api\controllers\
+++V1
+i:{caeaf1cb-d949-442b-95c7-3393288a87f5}:c:\users\marly\desktop\projetos .net\projectsocial\cwksocial.api\controllers\v1\
+++HandlerError.cs
+i:{caeaf1cb-d949-442b-95c7-3393288a87f5}:c:\users\marly\desktop\projetos .net\projectsocial\cwksocial.api\controllers\v1\handlererror.cs
+++PostsController.cs
+i:{caeaf1cb-d949-442b-95c7-3393288a87f5}:c:\users\marly\desktop\projetos .net\projectsocial\cwksocial.api\controllers\v1\postscontroller.cs
+i:{caeaf1cb-d949-442b-95c7-3393288a87f5}:c:\users\marly\desktop\projetos .net\projectsocial\cwksocial.api\controllers\v2\postscontroller.cs
+++UserProfilesController.cs
+i:{caeaf1cb-d949-442b-95c7-3393288a87f5}:c:\users\marly\desktop\projetos .net\projectsocial\cwksocial.api\controllers\v1\userprofilescontroller.cs
+++V2
+i:{caeaf1cb-d949-442b-95c7-3393288a87f5}:c:\users\marly\desktop\projetos .net\projectsocial\cwksocial.api\controllers\v2\
+++Extensions
+i:{caeaf1cb-d949-442b-95c7-3393288a87f5}:c:\users\marly\desktop\projetos .net\projectsocial\cwksocial.api\extensions\
+++Filters
+i:{caeaf1cb-d949-442b-95c7-3393288a87f5}:c:\users\marly\desktop\projetos .net\projectsocial\cwksocial.api\filters\
+++ConfigureSwaggerOptions.cs
+i:{caeaf1cb-d949-442b-95c7-3393288a87f5}:c:\users\marly\desktop\projetos .net\projectsocial\cwksocial.api\options\configureswaggeroptions.cs
+++Registrars
+i:{caeaf1cb-d949-442b-95c7-3393288a87f5}:c:\users\marly\desktop\projetos .net\projectsocial\cwksocial.api\registrars\
+++BogardRegistrar.cs
+i:{caeaf1cb-d949-442b-95c7-3393288a87f5}:c:\users\marly\desktop\projetos .net\projectsocial\cwksocial.api\registrars\bogardregistrar.cs
+++DbRegister.cs
+i:{caeaf1cb-d949-442b-95c7-3393288a87f5}:c:\users\marly\desktop\projetos .net\projectsocial\cwksocial.api\registrars\dbregister.cs
+++IdentityRegistrar.cs
+i:{caeaf1cb-d949-442b-95c7-3393288a87f5}:c:\users\marly\desktop\projetos .net\projectsocial\cwksocial.api\registrars\identityregistrar.cs
+++IRegistrar.cs
+i:{caeaf1cb-d949-442b-95c7-3393288a87f5}:c:\users\marly\desktop\projetos .net\projectsocial\cwksocial.api\registrars\iregistrar.cs
+++IWebApplicationBuilderRegistrar.cs
+i:{caeaf1cb-d949-442b-95c7-3393288a87f5}:c:\users\marly\desktop\projetos .net\projectsocial\cwksocial.api\registrars\iwebapplicationbuilderregistrar.cs
+++IWebApplicationRegistrar.cs
+i:{caeaf1cb-d949-442b-95c7-3393288a87f5}:c:\users\marly\desktop\projetos .net\projectsocial\cwksocial.api\registrars\iwebapplicationregistrar.cs
+++MvcRegistrar.cs
+i:{caeaf1cb-d949-442b-95c7-3393288a87f5}:c:\users\marly\desktop\projetos .net\projectsocial\cwksocial.api\registrars\mvcregistrar.cs
+++MvcWebAppRegistrar.cs
+i:{caeaf1cb-d949-442b-95c7-3393288a87f5}:c:\users\marly\desktop\projetos .net\projectsocial\cwksocial.api\registrars\mvcwebappregistrar.cs
+++SwaggerRegistrar.cs
+i:{caeaf1cb-d949-442b-95c7-3393288a87f5}:c:\users\marly\desktop\projetos .net\projectsocial\cwksocial.api\registrars\swaggerregistrar.cs
+++SwaggerWebAppRegistrar.cs
+i:{caeaf1cb-d949-442b-95c7-3393288a87f5}:c:\users\marly\desktop\projetos .net\projectsocial\cwksocial.api\registrars\swaggerwebappregistrar.cs
+++ApiRoutes.cs
+i:{caeaf1cb-d949-442b-95c7-3393288a87f5}:c:\users\marly\desktop\projetos .net\projectsocial\cwksocial.api\apiroutes.cs
+++appsettings.json
+i:{caeaf1cb-d949-442b-95c7-3393288a87f5}:c:\users\marly\desktop\projetos .net\projectsocial\cwksocial.api\appsettings.json
+++Program.cs
+i:{caeaf1cb-d949-442b-95c7-3393288a87f5}:c:\users\marly\desktop\projetos .net\projectsocial\cwksocial.api\program.cs
+++Nenhuma dependência de serviço descoberta
+i:{caeaf1cb-d949-442b-95c7-3393288a87f5}:>739
+++launchSettings.json
+i:{caeaf1cb-d949-442b-95c7-3393288a87f5}:c:\users\marly\desktop\projetos .net\projectsocial\cwksocial.api\properties\launchsettings.json
+++ErrorResponse.cs
+i:{caeaf1cb-d949-442b-95c7-3393288a87f5}:c:\users\marly\desktop\projetos .net\projectsocial\cwksocial.api\contracts\common\errorresponse.cs
+++PostCommentCreate.cs
+i:{caeaf1cb-d949-442b-95c7-3393288a87f5}:c:\users\marly\desktop\projetos .net\projectsocial\cwksocial.api\contracts\posts\requests\postcommentcreate.cs
+++PostCommentUpdate.cs
+i:{caeaf1cb-d949-442b-95c7-3393288a87f5}:c:\users\marly\desktop\projetos .net\projectsocial\cwksocial.api\contracts\posts\requests\postcommentupdate.cs
+++PostCreate.cs
+i:{caeaf1cb-d949-442b-95c7-3393288a87f5}:c:\users\marly\desktop\projetos .net\projectsocial\cwksocial.api\contracts\posts\requests\postcreate.cs
+++PostUpdate.cs
+i:{caeaf1cb-d949-442b-95c7-3393288a87f5}:c:\users\marly\desktop\projetos .net\projectsocial\cwksocial.api\contracts\posts\requests\postupdate.cs
+++PostCommentResponse.cs
+i:{caeaf1cb-d949-442b-95c7-3393288a87f5}:c:\users\marly\desktop\projetos .net\projectsocial\cwksocial.api\contracts\posts\responses\postcommentresponse.cs
+++PostResponse.cs
+i:{caeaf1cb-d949-442b-95c7-3393288a87f5}:c:\users\marly\desktop\projetos .net\projectsocial\cwksocial.api\contracts\posts\responses\postresponse.cs
+++RegisterExtensions.cs
+i:{caeaf1cb-d949-442b-95c7-3393288a87f5}:c:\users\marly\desktop\projetos .net\projectsocial\cwksocial.api\extensions\registerextensions.cs
+++CwkSocialExceptionHandler.cs
+i:{caeaf1cb-d949-442b-95c7-3393288a87f5}:c:\users\marly\desktop\projetos .net\projectsocial\cwksocial.api\filters\cwksocialexceptionhandler.cs
+++ValidateGuidAttribute.cs
+i:{caeaf1cb-d949-442b-95c7-3393288a87f5}:c:\users\marly\desktop\projetos .net\projectsocial\cwksocial.api\filters\validateguidattribute.cs
+++ValidateModelAttribute.cs
+i:{caeaf1cb-d949-442b-95c7-3393288a87f5}:c:\users\marly\desktop\projetos .net\projectsocial\cwksocial.api\filters\validatemodelattribute.cs
+++PostMappings.cs
+i:{caeaf1cb-d949-442b-95c7-3393288a87f5}:c:\users\marly\desktop\projetos .net\projectsocial\cwksocial.api\mappingprofiles\postmappings.cs
+++UserProfileMappings.cs
+i:{caeaf1cb-d949-442b-95c7-3393288a87f5}:c:\users\marly\desktop\projetos .net\projectsocial\cwksocial.api\mappingprofiles\userprofilemappings.cs
+++appsettings.Development.json
+i:{caeaf1cb-d949-442b-95c7-3393288a87f5}:c:\users\marly\desktop\projetos .net\projectsocial\cwksocial.api\appsettings.development.json
+++Microsoft.AspNetCore.Analyzers
+i:{caeaf1cb-d949-442b-95c7-3393288a87f5}:c:\program files\dotnet\sdk\6.0.101\sdks\microsoft.net.sdk.web\analyzers\cs\microsoft.aspnetcore.analyzers.dll
+++Microsoft.AspNetCore.App.Analyzers
+i:{caeaf1cb-d949-442b-95c7-3393288a87f5}:c:\program files\dotnet\packs\microsoft.aspnetcore.app.ref\6.0.0\analyzers\dotnet\cs\microsoft.aspnetcore.app.analyzers.dll
+++Microsoft.AspNetCore.App.CodeFixes
+i:{caeaf1cb-d949-442b-95c7-3393288a87f5}:c:\program files\dotnet\packs\microsoft.aspnetcore.app.ref\6.0.0\analyzers\dotnet\cs\microsoft.aspnetcore.app.codefixes.dll
+++Microsoft.AspNetCore.Components.Analyzers
+i:{caeaf1cb-d949-442b-95c7-3393288a87f5}:c:\program files\dotnet\sdk\6.0.101\sdks\microsoft.net.sdk.web\analyzers\cs\microsoft.aspnetcore.components.analyzers.dll
+++Microsoft.AspNetCore.Mvc.Analyzers
+i:{caeaf1cb-d949-442b-95c7-3393288a87f5}:c:\program files\dotnet\sdk\6.0.101\sdks\microsoft.net.sdk.web\analyzers\cs\microsoft.aspnetcore.mvc.analyzers.dll
+++Microsoft.AspNetCore.Razor.Internal.SourceGenerator.Transport
+i:{caeaf1cb-d949-442b-95c7-3393288a87f5}:c:\program files\dotnet\sdk\6.0.101\sdks\microsoft.net.sdk.razor\source-generators\microsoft.aspnetcore.razor.internal.sourcegenerator.transport.dll
+++Microsoft.NET.Sdk.Razor.SourceGenerators
+i:{caeaf1cb-d949-442b-95c7-3393288a87f5}:c:\program files\dotnet\sdk\6.0.101\sdks\microsoft.net.sdk.razor\source-generators\microsoft.net.sdk.razor.sourcegenerators.dll
+++Microsoft.AspNetCore.App
+i:{caeaf1cb-d949-442b-95c7-3393288a87f5}:c:\users\marly\desktop\projetos .net\projectsocial\cwksocial.api\microsoft.aspnetcore.app
+++AutoMapper.Extensions.Microsoft.DependencyInjection (11.0.0)
+i:{caeaf1cb-d949-442b-95c7-3393288a87f5}:>754
+++MediatR.Extensions.Microsoft.DependencyInjection (10.0.1)
+i:{caeaf1cb-d949-442b-95c7-3393288a87f5}:>759
+++Microsoft.AspNetCore.Authentication.JwtBearer (6.0.3)
+i:{caeaf1cb-d949-442b-95c7-3393288a87f5}:>757
+++Microsoft.AspNetCore.Mvc.Versioning (5.0.0)
+i:{caeaf1cb-d949-442b-95c7-3393288a87f5}:>750
+++Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer (5.0.0)
+i:{caeaf1cb-d949-442b-95c7-3393288a87f5}:>752
+++Microsoft.Extensions.Configuration.Abstractions (6.0.0)
+i:{caeaf1cb-d949-442b-95c7-3393288a87f5}:>755
+++Swashbuckle.AspNetCore (6.2.3)
+i:{caeaf1cb-d949-442b-95c7-3393288a87f5}:>756
+++UserProfileCreateUpdate.cs
+i:{caeaf1cb-d949-442b-95c7-3393288a87f5}:c:\users\marly\desktop\projetos .net\projectsocial\cwksocial.api\contracts\userprofile\requests\userprofilecreateupdate.cs
+++BasicInfoResponse.cs
+i:{caeaf1cb-d949-442b-95c7-3393288a87f5}:c:\users\marly\desktop\projetos .net\projectsocial\cwksocial.api\contracts\userprofile\responses\basicinforesponse.cs
+++UserProfileResponse.cs
+i:{caeaf1cb-d949-442b-95c7-3393288a87f5}:c:\users\marly\desktop\projetos .net\projectsocial\cwksocial.api\contracts\userprofile\responses\userprofileresponse.cs
+++IdentityController.cs
+i:{caeaf1cb-d949-442b-95c7-3393288a87f5}:c:\users\marly\desktop\projetos .net\projectsocial\cwksocial.api\controllers\v1\identitycontroller.cs
+++NovaPasta
+++Handler
+++Handlers
+i:{8e9c7bdc-f676-4fea-9444-827c77662c66}:c:\users\marly\desktop\projetos .net\projectsocial\cwksocial.application\identity\handlers\
+++RegisterIdentityCommand.cs
+i:{8e9c7bdc-f676-4fea-9444-827c77662c66}:c:\users\marly\desktop\projetos .net\projectsocial\cwksocial.application\identity\commands\registeridentitycommand.cs
+++RegisterIdentityCommandHandler.cs
+i:{8e9c7bdc-f676-4fea-9444-827c77662c66}:c:\users\marly\desktop\projetos .net\projectsocial\cwksocial.application\identity\handlers\registeridentitycommandhandler.cs
+++IdentityMapping.cs
+++IdentityMappings.cs
+i:{caeaf1cb-d949-442b-95c7-3393288a87f5}:c:\users\marly\desktop\projetos .net\projectsocial\cwksocial.api\mappingprofiles\identitymappings.cs
+++AuthenticationResult.cs
+i:{caeaf1cb-d949-442b-95c7-3393288a87f5}:c:\users\marly\desktop\projetos .net\projectsocial\cwksocial.api\contracts\identity\authenticationresult.cs
