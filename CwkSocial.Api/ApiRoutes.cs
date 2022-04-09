@@ -18,7 +18,7 @@
         }
         public static class Identity
         {
-            public const string = "login";
+            public const string login= "login";
             public const string Registration = "registration";
         }
 
