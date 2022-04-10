@@ -36,5 +36,21 @@ namespace CwkSocial.Api.Controllers.V1
 
             return Ok(authenticationResult);
         }
+
+        [HttpPost]
+        [Route(ApiRoutes.Identity.login)]
+        [ValidateModel]
+        public async Task<IActionResult> Login(Login login)
+        {
+            var command = _mapper.Map<LoginIdentityCommand>(login);
+            var result = await _mediator.Send(command);
+
+            var handlerError = new HandlerError();
+            if (result.IsError) return handlerError.HandleErrorResponse(result.Errors);
+
+            var authenticationResult = new AuthenticationResult() { Token = result.Payload };
+
+            return Ok(authenticationResult);
+        }
     }
 }

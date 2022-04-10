@@ -9,6 +9,7 @@ namespace CwkSocial.Api.MappingProfiles
         public IdentityMappings()
         {
             CreateMap<UserRegistration, RegisterIdentityCommand>();
+            CreateMap<Login, LoginIdentityCommand>();
         }
     }
 }
