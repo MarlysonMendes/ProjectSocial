@@ -98,8 +98,10 @@ namespace CwkSocial.Application.Identity.Handlers
                 };
                 result.Errors.Add(error);
             }
-
             return result;
         }
     }
+
+
+
 }

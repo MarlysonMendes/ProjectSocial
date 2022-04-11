@@ -8,6 +8,7 @@ using CwkSocial.Domain.Aggregates.UserProfileAggregate;
 using CwkSocial.Domain.Exceptions;
 using MediatR;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore.Storage;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using System;
@@ -39,59 +40,17 @@ namespace CwkSocial.Application.Identity.Handlers
             var result = new OperationResult<string>();
             try
             {
-                var existingIdentity = await _userManager.FindByEmailAsync(request.UserName);
 
-                if (existingIdentity != null)
-                {
-                    result.IsError = true;
-                    var error = new Error { Code = ErrorCode.IdentityUserAlreadyExists, 
-                        Message = "Provided email address already exists. Cannot register ne user" };
-                    result.Errors.Add(error);
-                    return result;
-                }
-                var identity = new IdentityUser
-                {
-                    Email = request.UserName,
-                    UserName = request.UserName
-                };
+                var creationValidated = await ValidateIdentityDoesNotExist(result, request);
+                if (!creationValidated) return result;
                
                 using var transaction = _ctx.Database.BeginTransaction();
+                var identity = await CreateIdentityUserAsync(result, request, transaction);
+                if(identity == null) return result;
 
-                var createIdentity = await _userManager.CreateAsync(identity, request.Password);
 
-                if (!createIdentity.Succeeded)
-                {
-                    await transaction.RollbackAsync();
-                    result.IsError = true;
-
-                    foreach (var identityError in createIdentity.Errors)
-                    {
-                        var error = new Error
-                        {
-                            Code = ErrorCode.IdentityUserCreateFailed,
-                            Message = identityError.Description
-                        };
-                        result.Errors.Add(error);
-                    }
-                    return result;
-                }
-                var basicInfo = BasicInfo.CreateBasicInfo(request.FirstName, request.LastName, request.UserName,
-                    request.Phone, request.DateOfBirth, request.CurrentCity);
-
-                var profile = UserProfile.CreateUserProfile(identity.Id, basicInfo);
-
-                try
-                {
-                    _ctx.UserProfiles.Add(profile);
-                    await _ctx.SaveChangesAsync();
-                    await transaction.CommitAsync();
-
-                }
-                catch (Exception ex)
-                {
-                    await transaction.RollbackAsync();
-                    throw;
-                }
+                var profile = await CreateUserProfileAsync(result, request, transaction, identity);
+                await transaction.CommitAsync();
 
                 var claimsIdentity = new ClaimsIdentity(new Claim[] 
                 {
@@ -129,6 +88,72 @@ namespace CwkSocial.Application.Identity.Handlers
             }
 
             return result;
+        }
+
+        private async Task<bool> ValidateIdentityDoesNotExist(OperationResult<string> result, RegisterIdentityCommand request)
+        {
+            var existingIdentity = await _userManager.FindByEmailAsync(request.UserName);
+
+            if (existingIdentity != null)
+            {
+                result.IsError = true;
+                var error = new Error
+                {
+                    Code = ErrorCode.IdentityUserAlreadyExists,
+                    Message = "Provided email address already exists. Cannot register ne user"
+                };
+                result.Errors.Add(error);
+                return false;
+            }
+            
+            return true;
+        }
+        private async Task<IdentityUser> CreateIdentityUserAsync(OperationResult<string> result, RegisterIdentityCommand request,
+                IDbContextTransaction transaction)
+        {
+            var identity = new IdentityUser { Email = request.UserName, UserName = request.UserName };
+
+            var createIdentity = await _userManager.CreateAsync(identity, request.Password);
+
+            if (!createIdentity.Succeeded)
+            {
+                await transaction.RollbackAsync();
+                result.IsError = true;
+
+                foreach (var identityError in createIdentity.Errors)
+                {
+                    var error = new Error
+                    {
+                        Code = ErrorCode.IdentityUserCreateFailed,
+                        Message = identityError.Description
+                    };
+                    result.Errors.Add(error);
+                }
+                return null;
+            }
+            return identity;
+        }
+
+        private async Task<UserProfile> CreateUserProfileAsync(OperationResult<string> result, RegisterIdentityCommand request, 
+                IDbContextTransaction transaction, IdentityUser identity)
+        {
+            
+            try
+            {
+                var basicInfo = BasicInfo.CreateBasicInfo(request.FirstName, request.LastName, request.UserName,
+                    request.Phone, request.DateOfBirth, request.CurrentCity);
+
+                var profile = UserProfile.CreateUserProfile(identity.Id, basicInfo);
+                _ctx.UserProfiles.Add(profile);
+                await _ctx.SaveChangesAsync();
+                return profile;
+            }
+            catch (Exception ex)
+            {
+                await transaction.RollbackAsync();
+                throw;
+            }
+
         }
     }
 }
