@@ -30,7 +30,7 @@ namespace CwkSocial.Application.Identity.Handlers
 
         public RegisterIdentityCommandHandler(DataContext ctx, UserManager<IdentityUser> userManager, IdentityService identityService)
         {
-            _ctx = ctx;
+            _ctx = ctx; 
             _userManager = userManager;
             _identityService = identityService;
         }
@@ -52,17 +52,7 @@ namespace CwkSocial.Application.Identity.Handlers
                 var profile = await CreateUserProfileAsync(result, request, transaction, identity);
                 await transaction.CommitAsync();
 
-                var claimsIdentity = new ClaimsIdentity(new Claim[] 
-                {
-                    new Claim(JwtRegisteredClaimNames.Sub, identity.Email),
-                    new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
-                    new Claim(JwtRegisteredClaimNames.Email, identity.Email),
-                    new Claim("IdentityId",identity.Id),
-                    new Claim("UserProfileId", profile.UserProfileId.ToString())
-                });
-
-                var token = _identityService.CreateSecurityToken(claimsIdentity);
-                result.Payload = _identityService.WriteToken(token);
+                result.Payload = GetJwtString(identity, profile);
 
                 return result;
             }
@@ -153,6 +143,23 @@ namespace CwkSocial.Application.Identity.Handlers
                 await transaction.RollbackAsync();
                 throw;
             }
+
+        }
+    
+        private string GetJwtString(IdentityUser identity, UserProfile profile)
+        {
+
+            var claimsIdentity = new ClaimsIdentity(new Claim[]
+                {
+                    new Claim(JwtRegisteredClaimNames.Sub, identity.Email),
+                    new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
+                    new Claim(JwtRegisteredClaimNames.Email, identity.Email),
+                    new Claim("IdentityId",identity.Id),
+                    new Claim("UserProfileId", profile.UserProfileId.ToString())
+                });
+
+            var token = _identityService.CreateSecurityToken(claimsIdentity);
+            return _identityService.WriteToken(token);
 
         }
     }
