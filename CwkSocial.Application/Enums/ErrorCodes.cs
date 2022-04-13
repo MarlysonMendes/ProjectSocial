@@ -12,6 +12,7 @@
         IdentityUserCreateFailed = 202,
         IdentityUserDoesNotExist = 203,
         IncorrectPassword = 204,
+        InexistenUserProfile = 205,
 
         UnknownError = 999
 
