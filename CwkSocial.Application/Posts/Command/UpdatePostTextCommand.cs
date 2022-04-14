@@ -13,5 +13,6 @@ namespace CwkSocial.Application.Posts.Command
     {
         public string NewText { get; set; }
         public Guid PostId { get; set; }
+        public Guid UserProfileId { get; set; }
     }
 }

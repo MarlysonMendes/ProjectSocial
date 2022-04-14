@@ -14,6 +14,10 @@
         IncorrectPassword = 204,
         InexistenUserProfile = 205,
 
+        //Application error
+        PostUpdateNotPossible = 300,
+        PostDeleteNotPossible = 300,
+
         UnknownError = 999
 
     }

@@ -42,6 +42,19 @@ namespace CwkSocial.Application.Posts.CommandHandlers
                     result.Errors.Add(error);
                     return result;
                 }
+
+                if (post.UserProfileId != request.UserProfileId)
+                {
+                    result.IsError = true;
+                    var error = new Error
+                    {
+                        Code = Enums.ErrorCode.PostDeleteNotPossible,
+                        Message = $"Only the owner of a post can delete it"
+                    };
+                    result.Errors.Add(error);
+                    return result;
+                }
+
                 _ctx.Posts.Remove(post);
                 await _ctx.SaveChangesAsync();
 

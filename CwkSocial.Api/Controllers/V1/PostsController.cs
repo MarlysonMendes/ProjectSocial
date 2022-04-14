@@ -7,13 +7,19 @@ using CwkSocial.Application.Posts.Command;
 using CwkSocial.Application.
     Posts.Queries;
 using MediatR;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using CwkSocial.Api.Extensions;
+using System.Security.Claims;
 
 namespace CwkSocial.Api.Controllers.V1
 {
     [ApiVersion("1.0")]
     [Route(ApiRoutes.BaseRoute)]
     [ApiController]
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+
     public class PostsController : ControllerBase
     {
         private readonly IMediator _mediator;
@@ -52,9 +58,11 @@ namespace CwkSocial.Api.Controllers.V1
         [ValidateModel]
         public async Task<IActionResult> CreatePost([FromBody] PostCreate newPost)
         {
+            var userProfileId = HttpContext.GetUserProfileIdClaimValue();
+
             var commandPost = new CreatePostCommand()
             {
-                UserProfileId = newPost.UserProfileId,
+                UserProfileId = userProfileId,
                 TextContent = newPost.TextContent
             };
 
@@ -73,10 +81,13 @@ namespace CwkSocial.Api.Controllers.V1
         [ValidateModel]
         public async Task<IActionResult> UpdatePostText ([FromBody] PostUpdate postUpdate, string id)
         {
+            var userProfileId = HttpContext.GetUserProfileIdClaimValue();
+
             var commandUpdate = new UpdatePostTextCommand()
             {
                 NewText = postUpdate.Text,
-                PostId = Guid.Parse(id)
+                PostId = Guid.Parse(id),
+                UserProfileId = userProfileId
             };
             var result = await _mediator.Send(commandUpdate);
 
@@ -90,7 +101,8 @@ namespace CwkSocial.Api.Controllers.V1
         [ValidateModel]
         public async Task<IActionResult> DeletePost (string id)
         {
-            var command = new DeletePostCommand { PostId  = Guid.Parse(id)};
+            var userProfileId = HttpContext.GetUserProfileIdClaimValue();
+            var command = new DeletePostCommand { PostId  = Guid.Parse(id), UserProfileId = userProfileId};
             var result = await _mediator.Send(command);
 
 
@@ -115,7 +127,7 @@ namespace CwkSocial.Api.Controllers.V1
 
         [HttpPost]
         [Route(ApiRoutes.Posts.PostComments)]
-        public async Task<IActionResult> addCommentToPost(string postId, [FromBody] PostCommentCreate comment)
+        public async Task<IActionResult> AddCommentToPost(string postId, [FromBody] PostCommentCreate comment)
         {
             var isValidGuid = Guid.TryParse(comment.UserProfileId, out var userProfileId);
 
