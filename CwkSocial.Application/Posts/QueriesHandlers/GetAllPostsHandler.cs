@@ -32,13 +32,7 @@ namespace CwkSocial.Application.Posts.QueriesHandlers
             }
             catch (Exception e)
             {
-                var error = new Error
-                {
-                    Code = ErrorCode.UnknownError,
-                    Message = $"{e.Message}"
-                };
-                result.IsError = true;
-                result.Errors.Add(error);
+                result.AddError(ErrorCode.UnknownError, e.Message);
                 return result;
             }
 

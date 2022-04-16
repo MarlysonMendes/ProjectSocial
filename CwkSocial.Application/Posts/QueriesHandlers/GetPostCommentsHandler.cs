@@ -33,16 +33,9 @@ namespace CwkSocial.Application.Posts.QueriesHandlers
                     .FirstOrDefaultAsync(p => p.PostId == request.PostId);
                 result.Payload = post.Commentes.ToList();
             }
-            catch (Exception ex)
+            catch (Exception e)
             {
-                var error = new Error
-                {
-                    Code = ErrorCode.UnknownError,
-                    Message = ex.Message
-                };
-                
-                result.Errors.Add(error);
-                result.IsError = true;
+                result.AddError(ErrorCode.UnknownError, e.Message);
             }
 
             return result;
