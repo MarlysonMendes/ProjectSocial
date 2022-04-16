@@ -39,22 +39,13 @@ namespace CwkSocial.Application.UserProfiles.CommandHandlers
 
             catch (UserProfileNotValidException ex)
             {
-                result.IsError = true;
-                ex.ValidationErrors.ForEach(e =>
-               {
-                   var error = new Error
-                   {
-                       Code = ErrorCode.ValidationError,
-                       Message = $"{ex.Message}"
-                   };
-                   result.Errors.Add(error);
-               });
+                ex.ValidationErrors.ForEach(e => result.AddError(ErrorCode.ValidationError, e));
+
             }
-            catch (Exception ex) 
+            catch (Exception e) 
             {
-                var error = new Error { Code = ErrorCode.UnknownError, Message = ex.Message };
-                result.Errors.Add(error);
-                result.IsError = true;
+                result.AddError(ErrorCode.UnknownError, e.Message);
+
             }
 
             return result;

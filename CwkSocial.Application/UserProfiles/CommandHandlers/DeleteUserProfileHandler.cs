@@ -22,18 +22,11 @@ namespace CwkSocial.Application.UserProfiles.CommandHandlers
             var userProfile = await _ctx.UserProfiles.FirstOrDefaultAsync(up => up.UserProfileId == request.UserProfileId);
             
             if(userProfile == null)
-            {
-                result.IsError = true;
-                var error = new Error
-                {
-                    Code = ErrorCode.NotFound,
-                    Message = $"No userProfile found with ID {request.UserProfileId}"
-                };
-                result.Errors.Add(error);
+            {                
+                result.AddError(ErrorCode.NotFound, 
+                    string.Format(UserProfilesErrorMessages.UserProfileNotFound,request.UserProfileId));
                 return result;
             }
-
-
 
             _ctx.UserProfiles.Remove(userProfile);
 
