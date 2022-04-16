@@ -44,20 +44,16 @@ namespace CwkSocial.Application.Identity.Handlers
             {
 
                 var identityUser = await ValidateAndIdentityUserAsync(request, result);
-                if (identityUser == null) return result;
+                if (result.IsError) return result;
 
 
                 var userProfile = await _ctx.UserProfiles.FirstOrDefaultAsync(up => up.IdentityId == identityUser.Id);
 
                 if(userProfile is null)
                 {
-                    result.IsError = true;
-                    var error = new Error
-                    {
-                        Code = ErrorCode.InexistenUserProfile,
-                        Message = $"Unable to find a user with the specifed username"
-                    };
-                    result.Errors.Add(error);
+                    result.AddError(ErrorCode.InexistenUserProfile, 
+                        IdentityErrorMessages.NonExistentIdentityUser);
+                    return null;
                 }
 
 
@@ -68,13 +64,7 @@ namespace CwkSocial.Application.Identity.Handlers
             }
             catch (Exception ex)
             {
-                result.IsError= true;
-                var error = new Error
-                {
-                    Code = ErrorCode.UnknownError,
-                    Message = $"{ex.Message}"
-                };
-                result.Errors.Add(error);
+                result.AddError(ErrorCode.UnknownError, ex.Message);
             }
             return result;
         }
@@ -84,30 +74,15 @@ namespace CwkSocial.Application.Identity.Handlers
             var identityUser = await _userManager.FindByEmailAsync(request.UserName);
 
             if (identityUser is null)
-            {
-                result.IsError = true;
-                var error = new Error
-                {
-                    Code = ErrorCode.IdentityUserDoesNotExist,
-                    Message = $"Unable to find a user with the specifed username"
-                };
-                result.Errors.Add(error);
-                return null;
-            }
+                result.AddError(ErrorCode.InexistenUserProfile,
+                    IdentityErrorMessages.NonExistentIdentityUser);
+
 
             var validPassword = await _userManager.CheckPasswordAsync(identityUser, request.Password);
 
             if (!validPassword)
-            {
-                result.IsError = true;
-                var error = new Error
-                {
-                    Code = ErrorCode.IncorrectPassword,
-                    Message = $"The provided password incorrect"
-                };
-                result.Errors.Add(error);
-                return null;
-            }
+                result.AddError(ErrorCode.IncorrectPassword, "The provided password incorrect");
+ 
 
             return identityUser;
         }
