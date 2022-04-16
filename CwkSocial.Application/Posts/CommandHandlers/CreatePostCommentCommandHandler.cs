@@ -29,11 +29,10 @@ namespace CwkSocial.Application.Posts.CommandHandlers
             try
             {
                 var post = await _ctx.Posts.FirstOrDefaultAsync(p => p.PostId == request.PostId);
-                if (post == null)
+                if (post is null)
                 {
-                    result.IsError = true;
-                    var error = new Error { Code = ErrorCode.NotFound, Message = $"No post found with Id {request.PostId}" };
-                    result.Errors.Add(error);
+                    result.AddError(ErrorCode.NotFound,
+                        string.Format(PostsErrorMessages.PostNotFound, request.PostId));
                     return result;
                 }
                 var comment = PostComment.CreatePostComment(request.PostId, request.CommentText, request.UserProfileId);
@@ -47,18 +46,11 @@ namespace CwkSocial.Application.Posts.CommandHandlers
             }
             catch (PostCommentNotValidException e)
             {
-                result.IsError = true;
-                e.ValidationErrors.ForEach(er =>
-                {
-                    var error = new Error { Code = ErrorCode.ValidationError, Message = $"{e.Message}" };
-                    result.Errors.Add(error);
-                });
+                e.ValidationErrors.ForEach(er => result.AddError(ErrorCode.ValidationError, er));
             }
             catch (Exception e)
             {
-                var error = new Error { Code = ErrorCode.UnknownError, Message = $"{e.Message}" };
-                result.IsError = true;
-                result.Errors.Add(error);
+                result.AddError(ErrorCode.UnknownError,e.Message);
             }
 
             return result;

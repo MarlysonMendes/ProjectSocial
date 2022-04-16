@@ -31,43 +31,29 @@ namespace CwkSocial.Application.Posts.CommandHandlers
             {
                 var post = await _ctx.Posts.FirstOrDefaultAsync(p => p.PostId == request.PostId);
 
-                if (post == null)
+                if (post is null)
                 {
-                    result.IsError = true;
-                    var error = new Error
-                    {
-                        Code = Enums.ErrorCode.NotFound,
-                        Message = $"No post found with Id {request.PostId}"
-                    };
-                    result.Errors.Add(error);
+                    result.AddError(ErrorCode.NotFound,
+                        string.Format(PostsErrorMessages.PostNotFound, request.PostId));
+
                     return result;
                 }
 
                 if (post.UserProfileId != request.UserProfileId)
                 {
-                    result.IsError = true;
-                    var error = new Error
-                    {
-                        Code = Enums.ErrorCode.PostDeleteNotPossible,
-                        Message = $"Only the owner of a post can delete it"
-                    };
-                    result.Errors.Add(error);
+                    result.AddError(ErrorCode.PostDeleteNotPossible, PostsErrorMessages.PostDeleteNotPossible);
                     return result;
                 }
 
                 _ctx.Posts.Remove(post);
                 await _ctx.SaveChangesAsync();
 
-                result.IsError = false;
                 result.Payload = post;
             }
            
             catch (Exception e)
             {
-                var error = new Error { Code = ErrorCode.UnknownError, Message = $"{e.Message}" };
-                result.IsError = true;
-                result.Errors.Add(error);
-
+                result.AddError(ErrorCode.UnknownError, e.Message);
             }
 
             return result;
