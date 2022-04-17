@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CwkSocial.Domain.Aggregates.UserProfileAggregate;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,6 +11,8 @@ namespace CwkSocial.Domain.Aggregates.PostAggregate
     {
         public Guid InteractionId { get; private set; }
         public Guid PostId { get; private set; }
+        public Guid? UserProfileId { get; private set; }
+        public UserProfile UserProfile { get; private set; }
         public InteractionType InteractionType { get; private set; }
 
 

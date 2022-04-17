@@ -79,32 +79,24 @@ namespace CwkSocial.Domain.Aggregates.PostAggregate
             TextContent = newText;
             LastModified = DateTime.UtcNow;
         }
-
-
-
         public void AddPostComment(PostComment newComment)
         { 
 
             _comments.Add(newComment);
         }
-
-
         public void RemoveComment(PostComment toRemove)
         {
             _comments.Remove(toRemove);
         }
-
-
-
         public void AddInteraction(PostInteraction newInteraction)
         {
             _interactions.Add(newInteraction);
         }
-
         public void RemoveInteraction(PostInteraction toRemove)
         {
             _interactions.Remove(toRemove);
         }
+
 
     }
 }

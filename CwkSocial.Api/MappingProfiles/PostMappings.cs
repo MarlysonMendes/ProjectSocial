@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using PostInteraction = CwkSocial.Domain.Aggregates.PostAggregate.PostInteraction;
+
 namespace CwkSocial.Application.MappingProfiles
 {
     public class PostMappings : Profile
@@ -15,6 +17,23 @@ namespace CwkSocial.Application.MappingProfiles
         {
             CreateMap<Post, PostResponse>();
             CreateMap<PostComment, PostCommentResponse>();
+            CreateMap<PostInteraction, CwkSocial.Api.Contracts.Posts.Responses.PostInteraction>()
+                .ForMember(dest 
+                    => dest.Author.FullName, opt 
+                    => opt.MapFrom( src 
+                    => src.UserProfile.BasicInfo.FirstName + " " + src.UserProfile.BasicInfo.LastName))
+                .ForMember(dest 
+                    => dest.Author.City, opt 
+                    => opt.MapFrom(src
+                    => src.UserProfile.BasicInfo.CurrentCity))
+                .ForMember(dest
+                    => dest.Author.UserProfileId, opt
+                    => opt.MapFrom(src
+                    => src.UserProfile.UserProfileId))
+                .ForMember(dest
+                    => dest.Type, opt
+                    => opt.MapFrom(src
+                    => src.InteractionType.ToString());
         }
     }
 }

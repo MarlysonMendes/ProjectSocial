@@ -158,5 +158,20 @@ namespace CwkSocial.Api.Controllers.V1
             var newComment = _mapper.Map<PostCommentResponse>(result.Payload);
             return Ok(result);
         }
+        
+        [HttpGet]
+        [Route(ApiRoutes.Posts.PostIntecations)]
+        public async Task<IActionResult> GetPostInteraction(string postId)
+        {
+            var postGuid = Guid.Parse(postId);
+            var query = new GetPostInteractionsQuery { PostId = postGuid };
+            var result = await _mediator.Send(query);
+            var handleError = new HandlerError();
+            
+            if(result.IsError) handleError.HandleErrorResponse(result.Errors);
+
+            var mapped = _mapper.Map<List<PostInteraction>>(result.Payload);
+            return Ok(mapped);
+        }
     }
 }

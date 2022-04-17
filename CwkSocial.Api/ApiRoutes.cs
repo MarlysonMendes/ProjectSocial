@@ -14,6 +14,10 @@
             public const string IdRoute = "{id}";
             public const string PostComments = "{postId}/comments";
             public const string CommentById = "{postId}/comments/{commentId}";
+            public const string AddInteraction = "{postId}/interactions";
+            public const string DeleteInteraction = "{postId}/interactions/{interactionsId}";
+            public const string IntecationsById = "{postId}/interaction/{InteractionId}";
+            public const string PostIntecations = "{postId}/interaction";
            
         }
         public static class Identity
@@ -21,6 +25,7 @@
             public const string login= "login";
             public const string Registration = "registration";
         }
+
 
     }
 }
