@@ -173,5 +173,27 @@ namespace CwkSocial.Api.Controllers.V1
             var mapped = _mapper.Map<List<PostInteraction>>(result.Payload);
             return Ok(mapped);
         }
+        [HttpPost]
+        [Route(ApiRoutes.Posts.PostIntecations)]
+        [ValidateModel]
+        public async Task<IActionResult> AddPostIntecations(string postId, PostInteractionCreate interacion)
+        {
+            var postGuid = Guid.Parse(postId);
+            var userProfileId = HttpContext.GetIdentityIdClaimValue();
+            var command = new AddInteractionCommand
+            {
+                PostId = postGuid,
+                UserProfileId = userProfileId,
+                Type = interacion.Type
+            };
+            var handleError = new HandlerError();
+
+            var result = await _mediator.Send(command);
+            if (result.IsError) return handleError.HandleErrorResponse(result.Errors);
+
+            var mapped = _mapper.Map<PostInteraction>(result.Payload);
+            return Ok(mapped);
+        }
+
     }
 }

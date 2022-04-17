@@ -33,7 +33,7 @@ namespace CwkSocial.Application.MappingProfiles
                 .ForMember(dest
                     => dest.Type, opt
                     => opt.MapFrom(src
-                    => src.InteractionType.ToString());
+                    => src.InteractionType.ToString()));
         }
     }
 }

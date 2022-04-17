@@ -17,11 +17,13 @@ namespace CwkSocial.Domain.Aggregates.PostAggregate
 
 
         //Factories
-        public static PostInteraction CreatePostInteraction(Guid PostId, InteractionType type)
+        public static PostInteraction CreatePostInteraction(Guid PostId, Guid userProfileId,
+            InteractionType type)
         {
             return new PostInteraction
             {
                 PostId = PostId,
+                UserProfileId = userProfileId,
                 InteractionType = type
 
             };
