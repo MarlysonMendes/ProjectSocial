@@ -15,7 +15,7 @@
             public const string PostComments = "{postId}/comments";
             public const string CommentById = "{postId}/comments/{commentId}";
             public const string DeleteInteraction = "{postId}/interactions/{interactionsId}";
-            public const string IntecationsById = "{postId}/interaction/{InteractionId}";
+            public const string IntecationsById = "{postId}/interaction/{interactionId}";
             public const string PostIntecations = "{postId}/interaction";
            
         }

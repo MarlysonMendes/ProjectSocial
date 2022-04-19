@@ -16,8 +16,8 @@
 
         //Application error
         PostUpdateNotPossible = 300,
-        PostDeleteNotPossible = 300,
-
+        PostDeleteNotPossible = 301,
+        InteractionRemovalNotAuthorized = 302,
         UnknownError = 999
 
     }
