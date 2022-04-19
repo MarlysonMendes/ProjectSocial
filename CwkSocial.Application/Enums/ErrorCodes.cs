@@ -18,7 +18,7 @@
         PostUpdateNotPossible = 300,
         PostDeleteNotPossible = 301,
         InteractionRemovalNotAuthorized = 302,
-        UnknownError = 999
-
+        UnknownError = 999,
+        UnauthorizedAccountRemoval = 1000
     }
 }

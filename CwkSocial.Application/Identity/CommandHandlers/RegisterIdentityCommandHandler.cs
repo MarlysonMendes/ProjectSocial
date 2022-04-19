@@ -19,7 +19,7 @@ using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CwkSocial.Application.Identity.Handlers
+namespace CwkSocial.Application.Identity.CommandHandlers
 {
     public class RegisterIdentityCommandHandler : IRequestHandler<RegisterIdentityCommand, OperationResult<string>>
     {
