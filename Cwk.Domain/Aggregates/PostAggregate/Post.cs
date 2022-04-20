@@ -88,6 +88,12 @@ namespace CwkSocial.Domain.Aggregates.PostAggregate
         {
             _comments.Remove(toRemove);
         }
+        public void UpdatePostComment(Guid postCommentId, string updateComment)
+        {
+            var comment = _comments.FirstOrDefault(c => c.CommentId == postCommentId);
+            if(comment != null && !string.IsNullOrWhiteSpace(updateComment))
+                comment.UpdateCommentText(updateComment);
+        }
         public void AddInteraction(PostInteraction newInteraction)
         {
             _interactions.Add(newInteraction);

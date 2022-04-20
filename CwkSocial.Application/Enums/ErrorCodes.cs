@@ -19,6 +19,7 @@
         PostDeleteNotPossible = 301,
         InteractionRemovalNotAuthorized = 302,
         UnknownError = 999,
-        UnauthorizedAccountRemoval = 1000
+        UnauthorizedAccountRemoval = 1000,
+        CommentRemovalNotAuthorized = 1001
     }
 }

@@ -96,6 +96,7 @@ namespace CwkSocial.Api.Controllers.V1
             return result.IsError ? handleError.HandleErrorResponse(result.Errors) : NoContent();
 
         }
+
         [HttpDelete]
         [Route(ApiRoutes.Posts.IdRoute)]
         [ValidateModel]
@@ -158,7 +159,28 @@ namespace CwkSocial.Api.Controllers.V1
             var newComment = _mapper.Map<PostCommentResponse>(result.Payload);
             return Ok(result);
         }
-        
+
+        [HttpDelete]
+        [Route(ApiRoutes.Posts.CommentById)]
+        public async Task<IActionResult> RemoveCommentFromPost(string postId, string commentId)
+        {
+            var userProfileId = HttpContext.GetUserProfileIdClaimValue();
+            var postGuid = Guid.Parse(postId);
+            var commentGuid = Guid.Parse(commentId);
+            var command = new RemoveCommentFromPostCommand
+            {
+                UserProfileId = userProfileId,
+                CommentId = commentGuid,
+                PostId = postGuid
+            };
+            var handlerError = new HandlerError();
+            var result = await _mediator.Send(command);
+
+            if (result.IsError) return handlerError.HandleErrorResponse(result.Errors);
+
+            return NoContent();
+        }
+
         [HttpGet]
         [Route(ApiRoutes.Posts.PostIntecations)]
         public async Task<IActionResult> GetPostInteraction(string postId)
@@ -173,6 +195,7 @@ namespace CwkSocial.Api.Controllers.V1
             var mapped = _mapper.Map<List<PostInteraction>>(result.Payload);
             return Ok(mapped);
         }
+
         [HttpPost]
         [Route(ApiRoutes.Posts.PostIntecations)]
         [ValidateModel]
