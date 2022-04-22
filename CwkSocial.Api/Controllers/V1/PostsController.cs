@@ -181,6 +181,30 @@ namespace CwkSocial.Api.Controllers.V1
             return NoContent();
         }
 
+        [HttpPut]
+        [Route(ApiRoutes.Posts.CommentById)]
+        public async Task<IActionResult> UpdateCommentText(string postId, string commentId,
+            PostCommentUpdate updatedComment)
+        {
+            var userProfileId = HttpContext.GetUserProfileIdClaimValue();
+            var postGuid = Guid.Parse(postId);
+            var commentGuid = Guid.Parse(commentId);
+
+            var command = new UpdatePostCommentCommand
+            {
+                UserProfileId = userProfileId,
+                PostId = postGuid,
+                CommentId = commentGuid,
+                UpdatedText = updatedComment.Text
+            };
+
+            var result = await _mediator.Send(command);
+            var handlerError = new HandlerError();
+            if (result.IsError) return handlerError.HandleErrorResponse(result.Errors);
+
+            return NoContent();
+        }
+
         [HttpGet]
         [Route(ApiRoutes.Posts.PostIntecations)]
         public async Task<IActionResult> GetPostInteraction(string postId)
