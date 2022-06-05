@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "gHM/BeyEYG+AxpaqcX9AG5/JUqarjbiD9We8QmZ8FVT3BgyOqOwASrIkAdtQFfoYRJhau2YYKKoT9iMFjwg+5A==",
+  "dgSpecHash": "D4HdAocLdT89csNAnTc0ub0YravJNB8XHvZEnRpfu1vxDdRpKLdU6cHT0E2EmlrSiaIiiyYIyCB/1VR7deR0jQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\marly\\Desktop\\Projetos .NET\\ProjectSocial\\CwkSocial.Api\\CwkSocial.Api.csproj",
+  "projectFilePath": "C:\\Users\\marly\\OneDrive\\Área de Trabalho\\Projetos .Net\\ProjectSocial\\CwkSocial.Api\\CwkSocial.Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\marly\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
     "C:\\Users\\marly\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\11.0.0\\automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",

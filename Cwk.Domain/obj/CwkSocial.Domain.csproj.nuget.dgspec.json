@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\marly\\Desktop\\Projetos .NET\\ProjectSocial\\Cwk.Domain\\CwkSocial.Domain.csproj": {}
+    "C:\\Users\\marly\\OneDrive\\Área de Trabalho\\Projetos .Net\\ProjectSocial\\Cwk.Domain\\CwkSocial.Domain.csproj": {}
   },
   "projects": {
-    "C:\\Users\\marly\\Desktop\\Projetos .NET\\ProjectSocial\\Cwk.Domain\\CwkSocial.Domain.csproj": {
+    "C:\\Users\\marly\\OneDrive\\Área de Trabalho\\Projetos .Net\\ProjectSocial\\Cwk.Domain\\CwkSocial.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\marly\\Desktop\\Projetos .NET\\ProjectSocial\\Cwk.Domain\\CwkSocial.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\marly\\OneDrive\\Área de Trabalho\\Projetos .Net\\ProjectSocial\\Cwk.Domain\\CwkSocial.Domain.csproj",
         "projectName": "CwkSocial.Domain",
-        "projectPath": "C:\\Users\\marly\\Desktop\\Projetos .NET\\ProjectSocial\\Cwk.Domain\\CwkSocial.Domain.csproj",
+        "projectPath": "C:\\Users\\marly\\OneDrive\\Área de Trabalho\\Projetos .Net\\ProjectSocial\\Cwk.Domain\\CwkSocial.Domain.csproj",
         "packagesPath": "C:\\Users\\marly\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\marly\\Desktop\\Projetos .NET\\ProjectSocial\\Cwk.Domain\\obj\\",
+        "outputPath": "C:\\Users\\marly\\OneDrive\\Área de Trabalho\\Projetos .Net\\ProjectSocial\\Cwk.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\marly\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -60,7 +60,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
         }
       }
     }

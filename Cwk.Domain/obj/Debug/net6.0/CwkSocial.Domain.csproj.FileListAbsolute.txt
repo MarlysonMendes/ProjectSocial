@@ -10,3 +10,15 @@ C:\Users\marly\Desktop\Projetos .NET\ProjectSocial\Cwk.Domain\obj\Debug\net6.0\C
 C:\Users\marly\Desktop\Projetos .NET\ProjectSocial\Cwk.Domain\obj\Debug\net6.0\CwkSocial.Domain.dll
 C:\Users\marly\Desktop\Projetos .NET\ProjectSocial\Cwk.Domain\obj\Debug\net6.0\ref\CwkSocial.Domain.dll
 C:\Users\marly\Desktop\Projetos .NET\ProjectSocial\Cwk.Domain\obj\Debug\net6.0\CwkSocial.Domain.pdb
+C:\Users\marly\OneDrive\Área de Trabalho\Projetos .Net\ProjectSocial\Cwk.Domain\bin\Debug\net6.0\CwkSocial.Domain.deps.json
+C:\Users\marly\OneDrive\Área de Trabalho\Projetos .Net\ProjectSocial\Cwk.Domain\bin\Debug\net6.0\CwkSocial.Domain.dll
+C:\Users\marly\OneDrive\Área de Trabalho\Projetos .Net\ProjectSocial\Cwk.Domain\bin\Debug\net6.0\CwkSocial.Domain.pdb
+C:\Users\marly\OneDrive\Área de Trabalho\Projetos .Net\ProjectSocial\Cwk.Domain\obj\Debug\net6.0\CwkSocial.Domain.csproj.AssemblyReference.cache
+C:\Users\marly\OneDrive\Área de Trabalho\Projetos .Net\ProjectSocial\Cwk.Domain\obj\Debug\net6.0\CwkSocial.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\marly\OneDrive\Área de Trabalho\Projetos .Net\ProjectSocial\Cwk.Domain\obj\Debug\net6.0\CwkSocial.Domain.AssemblyInfoInputs.cache
+C:\Users\marly\OneDrive\Área de Trabalho\Projetos .Net\ProjectSocial\Cwk.Domain\obj\Debug\net6.0\CwkSocial.Domain.AssemblyInfo.cs
+C:\Users\marly\OneDrive\Área de Trabalho\Projetos .Net\ProjectSocial\Cwk.Domain\obj\Debug\net6.0\CwkSocial.Domain.csproj.CoreCompileInputs.cache
+C:\Users\marly\OneDrive\Área de Trabalho\Projetos .Net\ProjectSocial\Cwk.Domain\obj\Debug\net6.0\CwkSocial.Domain.dll
+C:\Users\marly\OneDrive\Área de Trabalho\Projetos .Net\ProjectSocial\Cwk.Domain\obj\Debug\net6.0\refint\CwkSocial.Domain.dll
+C:\Users\marly\OneDrive\Área de Trabalho\Projetos .Net\ProjectSocial\Cwk.Domain\obj\Debug\net6.0\CwkSocial.Domain.pdb
+C:\Users\marly\OneDrive\Área de Trabalho\Projetos .Net\ProjectSocial\Cwk.Domain\obj\Debug\net6.0\ref\CwkSocial.Domain.dll
